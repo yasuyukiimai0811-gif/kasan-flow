@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>加算フローチャート判定</title>
+<title>加算フローチャート判定（基本版）</title>
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="theme-color" content="#0A1222">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="加算フロー">
+<meta name="apple-mobile-web-app-title" content="加算フロー基本">
 <link rel="apple-touch-icon" href="icon-192.png">
 <link rel="icon" href="icon-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -389,28 +389,26 @@ main,.wordsWrap{padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}
 @media(max-width:420px){main,.wordsWrap{padding-left:10px;padding-right:10px}.card{padding:14px}h2{font-size:17.5px}header{padding:8px 10px}header h1{font-size:15px;gap:7px}.tabs button{font-size:13px;padding:7px 4px}.yn button{font-size:17px;padding:15px 6px}.sform{gap:8px 10px}.scell .v{font-size:19px}}
 header .in>*{min-width:0}header h1{overflow:hidden;text-overflow:ellipsis}#svcTag{flex:none;max-width:42vw;overflow:hidden;text-overflow:ellipsis}
 html{-webkit-text-size-adjust:100%;text-size-adjust:100%}img,svg,video{max-width:100%}
+
+h1 .ed{font-size:11px;font-weight:700;color:var(--acc);background:var(--accbg);border-radius:6px;padding:1px 6px;margin-left:4px;flex:none}
 </style>
 </head>
 <body>
-<header><div class="in"><div><h1><svg class="mark" viewBox="0 0 34 34" aria-hidden="true"><defs><linearGradient id="mk" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--a1)"/><stop offset="1" stop-color="var(--a2)"/></linearGradient></defs><rect x="1" y="1" width="32" height="32" rx="10" fill="none" stroke="url(#mk)" stroke-width="1.5"/><path d="M10 24 L17 17 L24 10" stroke="url(#mk)" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="10" cy="24" r="2.6" fill="var(--a1)"/><circle cx="17" cy="17" r="2.6" fill="url(#mk)"/><circle cx="24" cy="10" r="2.6" fill="var(--a2)"/></svg>加算フローチャート判定</h1><p id="lead">行った支援を選び、質問に「はい」「いいえ」で答えると、該当する加算が分かります</p></div><span id="svcTag" hidden></span></div><nav class="tabs" role="tablist" aria-label="機能の切り替え"><button type="button" role="tab" id="tabK" aria-selected="true" aria-controls="mainK">加算を調べる</button><button type="button" role="tab" id="tabW" aria-selected="false" aria-controls="words">言葉の意味を調べる</button></nav></header>
+<header><div class="in"><div><h1><svg class="mark" viewBox="0 0 34 34" aria-hidden="true"><defs><linearGradient id="mk" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--a1)"/><stop offset="1" stop-color="var(--a2)"/></linearGradient></defs><rect x="1" y="1" width="32" height="32" rx="10" fill="none" stroke="url(#mk)" stroke-width="1.5"/><path d="M10 24 L17 17 L24 10" stroke="url(#mk)" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="10" cy="24" r="2.6" fill="var(--a1)"/><circle cx="17" cy="17" r="2.6" fill="url(#mk)"/><circle cx="24" cy="10" r="2.6" fill="var(--a2)"/></svg>加算フローチャート判定<span class="ed">基本版</span></h1><p id="lead">行った支援を選び、質問に「はい」「いいえ」で答えると、該当する加算が分かります</p></div><span id="svcTag" hidden></span></div><nav class="tabs" role="tablist" aria-label="機能の切り替え"><button type="button" role="tab" id="tabK" aria-selected="true" aria-controls="mainK">加算を調べる</button><button type="button" role="tab" id="tabW" aria-selected="false" aria-controls="words">言葉の意味を調べる</button></nav></header>
 <main id="mainK" role="tabpanel" aria-labelledby="tabK">
 <section id="view" aria-live="polite"></section>
 <aside id="side" class="card" aria-label="これまでの回答"></aside>
 </main>
 <section id="words" class="wordsWrap" role="tabpanel" aria-labelledby="tabW" hidden></section>
 <section id="simv" class="wordsWrap" aria-labelledby="simh" hidden></section>
-<section id="addv" class="wordsWrap" aria-labelledby="adh" hidden></section>
 <section id="histv" class="wordsWrap" aria-labelledby="histh" hidden></section>
-<section id="wlv" class="wordsWrap" aria-labelledby="wlh" hidden></section>
 <section id="glv" class="wordsWrap" aria-labelledby="glh" hidden></section>
 <button type="button" id="fab" aria-haspopup="true" aria-expanded="false" aria-controls="fmenu" aria-label="メニューを開く（長押ししたまま動かすと場所を変えられます）"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg></button>
 <div id="fmenu" role="menu" aria-label="メニュー" hidden>
 <button type="button" role="menuitem" data-m="k"><span class="mi">⌕</span>加算を調べる</button>
 <button type="button" role="menuitem" data-m="w"><span class="mi">あ</span>言葉の意味を調べる</button>
 <button type="button" role="menuitem" data-m="b"><span class="mi">≡</span>業務ガイドライン</button>
-<button type="button" role="menuitem" data-m="a"><span class="mi">✓</span>加算入力チェック</button>
 <button type="button" role="menuitem" data-m="s"><span class="mi">¥</span>損益シミュレーション</button>
-<button type="button" role="menuitem" data-m="g"><span class="mi">▤</span>業務量シミュレーション</button>
 <button type="button" role="menuitem" data-m="h"><span class="mi">★</span>保存した判定</button>
 <button type="button" role="menuitem" data-m="r" class="mreset">メニューの位置を元に戻す</button>
 </div>
@@ -1232,254 +1230,6 @@ function showSim(R,I){const has=I.cur>0;const j=has?R.B114:"",jc=!j?"none":(j.in
  <h3 class="sh3">月額と年額</h3>${tb(["","月あたり（円）","年間（円）"],[["収益",has?yen(R.B119):"-",has?yen(R.C119):"-"],["固定費",yen(R.B79),yen(R.B80)],["損益",has?yen(R.B121):"-",has?yen(R.C121):"-"],["1人増やすと増える収益",yen(R.B123),yen(R.C123)]])}
  <p>単価 ${I.tanka}、処遇改善加算 ${f1(I.shogu*100)}％、モニタリング 初年度${I.mon1}回・2年目以降${I.mon2}回、更新月は「${esc(I.renew)}」${R.B32?"、体制加算 "+R.B32+" 単位":""}${I.kyodo?"、地域体制強化共同支援加算 年"+I.kyodo+"回":""}で計算しています。時間は移動時間（往復 ${f1(I.travel)} 時間）を計画作成・更新月は2回分、モニタリングは1回分加えています。初回加算・拠点等機能強化加算は含みません。上限件数は法令の基準ではなく目安です。計算式は「計画相談支援スケジュール管理」v18.63の損益分岐（経営）シートと同じです。</p></details>`}
 
-/* ===== 加算入力チェック：「計画相談支援スケジュール管理」v18.63 の加算定義（addonDefsForDialog_）と算定ルール（evaluateAddonRules_）を移植。判定処理は原文のまま ===== */
-const ADDEF={"計画相談支援": {"soudan": true, "defs": [{"name": "初回加算", "group": "kobetsu", "unit": 300, "type": "plan", "count_limit": "", "unitText": "300単位", "info": "サービスによって単位が異なります：計画相談支援＝300単位／障害児相談支援＝500単位（業務ガイドラインP.108）。チェックすると行のサービスに応じた単位が自動で適用されます。\n【算定条件】新規に計画を作成、又は前6月間に障害福祉サービス等を利用していない者への計画作成月。契約から計画案交付まで3か月超で月2回以上面接した場合は最大3回を重ねて算定（合計月4回まで）→合計単位を数値で入力。\n【算定不可】退院・退所加算との併給、算定月の前6月に居宅介護支援事業所等連携加算を算定している場合。\n出典：業務ガイドラインP.136", "warn": "", "warnTag": "", "multi": false}, {"name": "退院・退所加算", "group": "kobetsu", "unit": 300, "type": "plan", "count_limit": "入院・入所期間中3回まで", "unitText": "300単位", "info": "【算定条件】退院・退所等に当たり施設職員と面談して必要な情報の提供を受け、サービス等利用計画を作成し、支給決定を受けた場合。サービス利用支援費（計画作成月）に併せて算定（300単位/回、入院・入所から退院・退所までに3回まで）。\n【併給不可】初回加算を算定する場合は算定不可。\n出典：業務ガイドラインP.137", "warn": "", "warnTag": "", "multi": true}, {"name": "医療・保育・教育機関等連携加算（面談等・計画作成月）", "group": "kobetsu", "unit": 200, "type": "plan", "count_limit": "月1回", "unitText": "200単位", "info": "【算定条件】福祉サービス等提供機関（障害福祉サービス等事業者を除く）の職員との面談又は会議により情報提供を受けたうえで、サービス利用支援（計画作成）を行った場合。\n【算定不可】初回加算・退院・退所加算を算定する場合、退院・退所する施設の職員のみから情報提供を受けた場合。\n出典：業務ガイドラインP.138", "warn": "", "warnTag": "", "multi": false}, {"name": "医療・保育・教育機関等連携加算（面談等・モニタリング月）", "group": "kobetsu", "unit": 300, "type": "monitor", "count_limit": "", "unitText": "300単位", "info": "", "warn": "⚠️統合先要確認：障害児相談支援の「面談等」連携加算はこの列に統合していますが、統合先は単位数（300単位）の一致のみで判定した推定です。実際の支援内容が「モニタリング月の面談等」か「通院同行」（右の列）かを個別に確認し、必要なら横浜市へ直接お問い合わせください。なお、R8開設説明会資料（R8.9.30）で、障害児相談支援にも「面談・会議（計画作成200／モニタリング300）」「通院同行300」の区分があることは確認済みです（列構成は妥当。旧列からの移行先のみ推定）。他の統合列（保育・教育等移行支援加算、サービス担当者会議実施加算）は名称・単位ともに横浜市資料で一致確認済みですが、本列のみ確度が異なります。", "warnTag": "統合先推定", "multi": false}, {"name": "医療・保育・教育機関等連携加算（通院同行）", "group": "kobetsu", "unit": 300, "type": "both", "count_limit": "月3回・同一病院は月1回", "unitText": "300単位", "info": "【算定条件】通院に同行し、病院等の職員に必要な情報を提供した場合。計画作成月・モニタリング月（基本報酬を算定する月）に限る。\n出典：業務ガイドラインP.138", "warn": "", "warnTag": "", "multi": true}, {"name": "医療・保育・教育機関等連携加算（情報提供）", "group": "kobetsu", "unit": 150, "type": "both", "count_limit": "区分ごと月1回", "unitText": "150単位", "info": "【算定条件】福祉サービス等提供機関からの求めに応じて情報提供した場合。計画作成月・モニタリング月に限る。①病院等・訪問看護事業所、②それ以外の区分ごとに月1回。同じ病院に通院同行で情報提供した月は重複算定不可。\n出典：業務ガイドラインP.139", "warn": "", "warnTag": "", "multi": false}, {"name": "サービス提供時モニタリング加算", "group": "kobetsu", "unit": 100, "type": "any", "count_limit": "月1回・専門員1人月39件まで", "unitText": "100単位", "info": "【算定条件】サービス提供事業所等を訪問し、サービス提供場面を直接確認して記録した場合。モニタリング月以外でも算定でき、単独請求も可（体制加算は付かない）。\n回数：利用者1人につき月1回。相談支援専門員1人が1月に請求できるのは39件まで（相談支援員は19件）。兼務先の事業所の確認は不可。\n出典：業務ガイドラインP.145、国QA(H30)問80", "warn": "", "warnTag": "", "multi": false}, {"name": "サービス担当者会議実施加算", "group": "kobetsu", "unit": 100, "type": "monitor", "count_limit": "月1回", "unitText": "100単位", "info": "計画相談支援・障害児相談支援のどちらでも、この同じ列に単位数を入力してください（横浜市の説明資料上、両サービスで同一の加算・単位として一覧化されています）。\n【算定不可】会議の結果、計画を変更してサービス利用支援費を算定する月（更新月を計画作成費で請求する月を含む）。医療・保育・教育機関等連携加算（面談等）を算定する月。\n出典：業務ガイドラインP.140", "warn": "", "warnTag": "", "multi": false}, {"name": "入院時情報連携加算（Ⅰ）", "group": "kobetsu", "unit": 300, "type": "any", "count_limit": "月1回", "unitText": "300単位", "info": "【算定条件】入院に当たり医療機関へ出向き、職員と面談して必要な情報を提供した場合。基本報酬のない月でも単独請求可（体制加算は付かない）。\n【併給不可】（Ⅰ）と（Ⅱ）の同時算定、同一医療機関への医療・保育・教育機関等連携加算。\n出典：業務ガイドラインP.141", "warn": "", "warnTag": "", "multi": false}, {"name": "入院時情報連携加算（Ⅱ）", "group": "kobetsu", "unit": 150, "type": "any", "count_limit": "月1回", "unitText": "150単位", "info": "【算定条件】（Ⅰ）以外の方法（FAX等）で必要な情報を提供した場合。単独請求可。（Ⅰ）との同時算定は不可。\n出典：業務ガイドラインP.141", "warn": "", "warnTag": "", "multi": false}, {"name": "居宅介護支援事業所等連携加算（計画相談）／保育・教育等移行支援加算（障害児相談）：訪問・会議参加", "group": "kobetsu", "unit": 300, "type": "interval", "count_limit": "", "unitText": "300単位", "info": "【2つの加算を1列で管理（目的・対象サービスが異なる別の加算です）】\n\n■計画相談支援 → 居宅介護支援事業所等連携加算（300単位/月）\n目的：介護保険移行・就職等に伴い利用を終了する際の引継ぎ支援\n連携先：居宅介護支援事業所（ケアマネ）、就業・生活支援センター、企業等\n\n■障害児相談支援 → 保育・教育等移行支援加算（300単位/月）\n目的：就学・進学・就職等に伴い障害児通所支援を終了する際の引継ぎ支援\n連携先：保育所、幼稚園、小中高校、特別支援学校、企業等\n要件：①月2回以上の居宅訪問面接 または ②他機関主催の会議への参加\n\n【算定タイミング】基本報酬を算定する月（計画作成月・モニタリング月）には算定できません。\n→ 基本報酬のない月にのみ算定可能です（集中支援加算と同じ考え方）。\n\n【併給不可（計画相談支援・障害児相談支援とも）】入院時情報連携加算・退院・退所加算を算定している月は算定不可（業務ガイドラインP.143）。\n\n【算定回数上限（計画相談支援・障害児相談支援とも）】\n・障害福祉サービス等の利用中：ア〜カの区分ごとに各2回まで\n・利用終了日から6か月以内：区分ごとに月1回まで（計画相談の支給決定最終月に請求）\n\n【記録の整備】面接日時・場所・内容、会議出席者、提供情報の要旨を記録し5年間保存。\n\n出典：業務ガイドラインP.142-143、R8集団指導資料P.166-168", "warn": "", "warnTag": "", "multi": false}, {"name": "居宅介護支援事業所等連携加算（計画相談）／保育・教育等移行支援加算（障害児相談）：情報提供", "group": "kobetsu", "unit": 150, "type": "any", "count_limit": "", "unitText": "150単位", "info": "【令和8年度資料で単位確認済み】\n■計画相談支援 → 居宅介護支援事業所等連携加算・情報提供＝150単位/月\n■障害児相談支援 → 保育・教育等移行支援加算・文書による情報提供＝150単位/月\nチェックすると150単位が自動適用されます。\n\n【算定要件】他機関との連携にあたり、心身の状況等に関する情報を、\nこの目的のために作成した文書により提供し、支援内容の検討に協力した場合。\n\n【算定タイミング（計画相談支援）】基本報酬を算定する月でも算定できます。基本報酬のない月に限られるのは「訪問・会議参加」だけです（業務ガイドラインP.142〜143、国QA(R3)VOL.2問30）。\n※障害児相談支援の保育・教育等移行支援加算は、こども青少年局の資料で算定月を確認してください。\n\n【併給不可】入院時情報連携加算・退院・退所加算を算定している月は算定不可（同P.143）。\n\n【算定回数上限】利用中は区分ごとに各2回まで、利用終了後6か月以内は月1回まで（同P.142）。\n\n【記録の整備】提供した情報の要旨等を記録し5年間保存。\n\n出典：令和8年度開所説明会資料P.52、業務ガイドラインP.142-143", "warn": "", "warnTag": "", "multi": false}, {"name": "集中支援加算（訪問・会議開催・参加）", "group": "kobetsu", "unit": 300, "type": "interval", "count_limit": "ア〜ウ各月1回（最大900）", "unitText": "300単位", "info": "【集中支援加算とは】計画作成月・モニタリング月「以外」の月にのみ算定できます（国QA(R3)VOL.2問30）。\n\n【この列でまとめて管理する3区分（それぞれ300単位・各月1回）】\nア 月2回以上の居宅等への訪問による面接（利用者又は市町村等の求めに応じて。うち月1回は居宅訪問）\nイ サービス担当者会議の開催（利用者又は家族の出席が必要）\nウ 関係機関が開催する会議への参加\n→ 同じ月に複数に該当する場合は、チェックを外して合計（最大900単位）を数値で入力してください。\n\n【入院時情報連携加算（Ⅰ）・退院・退所加算との関係】\n併給不可なのは「ウ 関係機関が開催する会議への参加」（300単位）のみです。両加算を算定した月でも、ア（訪問）・イ（会議開催）は算定できます（業務ガイドラインP.108、国QA(R3)VOL.2問27③）。\n\nウは居宅介護支援事業所等連携加算の会議参加と趣旨・つなぎ先が同じ場合は算定不可。\n出典：業務ガイドラインP.146〜147（⑧集中支援加算）", "warn": "", "warnTag": "", "multi": false}, {"name": "集中支援加算（通院同行）", "group": "kobetsu", "unit": 300, "type": "interval", "count_limit": "月3回・同一病院は月1回", "unitText": "300単位", "info": "【算定条件】計画作成月・モニタリング月「以外」の月に、利用者の通院に同行し、病院等の職員に必要な情報を提供した場合（300単位）。\n回数：1月に3回まで、同一の病院等は1月に1回まで（医療・保育・教育機関等連携加算の通院同行と同じ扱い）。\n出典：業務ガイドラインP.147・P.138", "warn": "", "warnTag": "", "multi": true}, {"name": "集中支援加算（情報提供）", "group": "kobetsu", "unit": 150, "type": "interval", "count_limit": "区分ごと月1回", "unitText": "150単位", "info": "【算定条件】計画作成月・モニタリング月「以外」の月に、福祉サービス等提供機関からの求めに応じて情報提供した場合（150単位）。\n回数：①病院等・訪問看護事業所、②それ以外の機関の区分ごとに月1回まで。\n出典：業務ガイドラインP.147・P.139", "warn": "", "warnTag": "", "multi": false}, {"name": "地域生活支援拠点等相談強化加算", "group": "kobetsu", "unit": 700, "type": "any", "count_limit": "月4回", "unitText": "700単位", "info": "", "warn": "", "warnTag": "", "multi": true}, {"name": "地域体制強化共同支援加算", "group": "kobetsu", "unit": 2000, "type": "any", "count_limit": "月1回", "unitText": "2000単位", "info": "【地域体制強化共同支援加算とは】2,000単位/月（利用者1人につき月1回を限度）。\n\n【算定要件】支援が困難な利用者に対して、相談支援専門員等が利用者の同意を得て、福祉サービス等を提供する事業者のうち3者以上と共同して、\n①会議により情報共有・支援内容を検討し、\n②在宅療養・地域生活に必要な説明・指導等の支援を共同して実施し、\n③地域課題を整理して協議会等に文書で報告した場合に算定できます。\n\n【算定に当たっての留意事項】\n・個別課題から地域課題を抽出し、協議会に参画して地域のサービス提供体制・社会資源の連携体制の構築を推進する趣旨の加算です。協議会へ報告する事例は、広く地域の関係者間で検討する必要がある課題を選定してください。\n・支援関係者が支援に要した費用は、指定特定相談支援事業所が負担することが望ましいとされています。\n・「地域体制強化共同支援加算報告書兼記録書」（市ホームページ掲載）を作成し、5年間保存。市町村長等から求めがあれば提出義務があります。\n\n【届出】算定には本市への手続きが必要です。運営規程に地域生活支援拠点である旨を規定し、体制届＋「地域生活支援拠点等の機能に関連する届出」の提出、および事業所所在区の自立支援協議会への報告が必要です。\n\n出典：横浜市業務ガイドラインP.149（⑩地域体制強化共同支援加算）・P.152（拠点関連加算の注意点）、報酬告示17、留意事項通知第四の20。確認日：2026-07-12", "warn": "", "warnTag": "", "multi": false}, {"name": "地域生活支援拠点等機能強化加算", "group": "kobetsu", "unit": 500, "type": "any", "count_limit": "月100回", "unitText": "500単位", "info": "", "warn": "⚠️ 横浜市では本加算を算定する事業所を想定していません。算定前に必ず障害施策推進課等へ確認してください。", "warnTag": "", "multi": false}, {"name": "遠隔地訪問加算", "group": "kobetsu", "unit": 300, "type": "any", "count_limit": "", "unitText": "300単位", "info": "【遠隔地訪問加算とは】300単位/回。特別地域に所在し、事業所から利用者の居宅等まで合理的な経路で概ね片道1時間を要する距離がある場合に、訪問を伴う対象加算と合わせて算定します。\n\n【重要：単純な1回=300単位ではありません】\n「300単位 × 対象加算の算定回数の合計」で算定します。訪問を伴う以下の対象加算を算定した回数を数え、その合計回数分だけチェックしてください（チェック1つ＝1回分＝300単位）。\n\n【対象となる加算（訪問・面接・通院同行を伴うもの）】\n①初回加算（契約〜計画交付が3か月超で月2回以上面接した場合。該当月数を回数としてカウント／最大3）\n②入院時情報連携加算（医療機関へ出向いて面談）\n③退院・退所加算\n④居宅介護支援事業所等連携加算（訪問による面接）\n⑤医療・保育・教育機関等連携加算（面談・会議、通院同行）\n⑥集中支援加算（訪問面接、通院同行）\n\n【算定要件】特別地域に所在し、片道概ね1時間を要する距離。訪問に要した時間・経路等を記録し保存。\n※神奈川県内の特別地域は清川村全域・相模原市の旧津久井町／旧藤野町・山北町・湯河原町・松田町・南足柄市の旧北足柄村・大井町の旧相和村です。横浜市内の利用者は対象外です（業務ガイドラインP.124）。\n\n【障害児相談支援の場合】単位・算定可否は最新の一次資料でご確認ください（この定義は計画相談支援・業務ガイドラインP.151で確認したものです）。\n\n出典：横浜市業務ガイドラインP.151（⑫遠隔地訪問加算・300単位/回）、報酬告示18、留意事項通知第四の21。確認日：2026-07-10", "warn": "", "warnTag": "", "multi": false}, {"name": "利用者負担上限額管理加算", "group": "kobetsu", "unit": 150, "type": "any", "count_limit": "月1回", "unitText": "150単位", "info": "計画相談支援の事業所が上限管理事業所になるのは、モニタリングが毎月決定されている利用者のみです（区役所の決定が必要）。\n出典：業務ガイドラインP.135", "warn": "", "warnTag": "", "multi": false}, {"name": "行動障害支援体制加算（Ⅰ）", "group": "taisei", "unit": 60, "type": "", "count_limit": "", "unitText": "60単位", "info": "", "warn": "", "warnTag": "", "multi": false}, {"name": "行動障害支援体制加算（Ⅱ）", "group": "taisei", "unit": 30, "type": "", "count_limit": "", "unitText": "30単位", "info": "", "warn": "", "warnTag": "", "multi": false}, {"name": "要医療児者支援体制加算（Ⅰ）", "group": "taisei", "unit": 60, "type": "", "count_limit": "", "unitText": "60単位", "info": "", "warn": "", "warnTag": "", "multi": false}, {"name": "要医療児者支援体制加算（Ⅱ）", "group": "taisei", "unit": 30, "type": "", "count_limit": "", "unitText": "30単位", "info": "", "warn": "", "warnTag": "", "multi": false}, {"name": "精神障害者支援体制加算（Ⅰ）", "group": "taisei", "unit": 60, "type": "", "count_limit": "", "unitText": "60単位", "info": "", "warn": "", "warnTag": "", "multi": false}, {"name": "精神障害者支援体制加算（Ⅱ）", "group": "taisei", "unit": 30, "type": "", "count_limit": "", "unitText": "30単位", "info": "", "warn": "", "warnTag": "", "multi": false}, {"name": "高次脳機能障害者支援体制加算（Ⅰ）", "group": "taisei", "unit": 60, "type": "", "count_limit": "", "unitText": "60単位", "info": "", "warn": "", "warnTag": "", "multi": false}, {"name": "高次脳機能障害者支援体制加算（Ⅱ）", "group": "taisei", "unit": 30, "type": "", "count_limit": "", "unitText": "30単位", "info": "", "warn": "", "warnTag": "", "multi": false}, {"name": "ピアサポート体制加算", "group": "taisei", "unit": 100, "type": "", "count_limit": "", "unitText": "100単位", "info": "", "warn": "", "warnTag": "", "multi": false}, {"name": "主任相談支援専門員配置加算（Ⅰ）", "group": "taisei", "unit": 300, "type": "", "count_limit": "", "unitText": "300単位", "info": "", "warn": "", "warnTag": "", "multi": false}, {"name": "主任相談支援専門員配置加算（Ⅱ）", "group": "taisei", "unit": 100, "type": "", "count_limit": "", "unitText": "100単位", "info": "", "warn": "", "warnTag": "", "multi": false}], "raw": [{"name": "初回加算", "unit": 300, "unitByService": {"計画相談支援": 300, "障害児相談支援": 500}}, {"name": "退院・退所加算", "unit": 300, "unitByService": null}, {"name": "医療・保育・教育機関等連携加算（面談等・計画作成月）", "unit": 200, "unitByService": null}, {"name": "医療・保育・教育機関等連携加算（面談等・モニタリング月）", "unit": 300, "unitByService": null}, {"name": "医療・保育・教育機関等連携加算（通院同行）", "unit": 300, "unitByService": null}, {"name": "医療・保育・教育機関等連携加算（情報提供）", "unit": 150, "unitByService": null}, {"name": "サービス提供時モニタリング加算", "unit": 100, "unitByService": null}, {"name": "サービス担当者会議実施加算", "unit": 100, "unitByService": null}, {"name": "入院時情報連携加算（Ⅰ）", "unit": 300, "unitByService": null}, {"name": "入院時情報連携加算（Ⅱ）", "unit": 150, "unitByService": null}, {"name": "居宅介護支援事業所等連携加算（計画相談）／保育・教育等移行支援加算（障害児相談）：訪問・会議参加", "unit": 300, "unitByService": null}, {"name": "居宅介護支援事業所等連携加算（計画相談）／保育・教育等移行支援加算（障害児相談）：情報提供", "unit": 150, "unitByService": {"計画相談支援": 150, "障害児相談支援": 150}}, {"name": "集中支援加算（訪問・会議開催・参加）", "unit": 300, "unitByService": null}, {"name": "集中支援加算（通院同行）", "unit": 300, "unitByService": null}, {"name": "集中支援加算（情報提供）", "unit": 150, "unitByService": null}, {"name": "地域生活支援拠点等相談強化加算", "unit": 700, "unitByService": null}, {"name": "地域体制強化共同支援加算", "unit": 2000, "unitByService": null}, {"name": "地域生活支援拠点等機能強化加算", "unit": 500, "unitByService": null}, {"name": "遠隔地訪問加算", "unit": 300, "unitByService": null}, {"name": "利用者負担上限額管理加算", "unit": 150, "unitByService": null}, {"name": "行動障害支援体制加算（Ⅰ）", "unit": 60, "unitByService": null}, {"name": "行動障害支援体制加算（Ⅱ）", "unit": 30, "unitByService": null}, {"name": "要医療児者支援体制加算（Ⅰ）", "unit": 60, "unitByService": null}, {"name": "要医療児者支援体制加算（Ⅱ）", "unit": 30, "unitByService": null}, {"name": "精神障害者支援体制加算（Ⅰ）", "unit": 60, "unitByService": null}, {"name": "精神障害者支援体制加算（Ⅱ）", "unit": 30, "unitByService": null}, {"name": "高次脳機能障害者支援体制加算（Ⅰ）", "unit": 60, "unitByService": null}, {"name": "高次脳機能障害者支援体制加算（Ⅱ）", "unit": 30, "unitByService": null}, {"name": "ピアサポート体制加算", "unit": 100, "unitByService": null}, {"name": "主任相談支援専門員配置加算（Ⅰ）", "unit": 300, "unitByService": null}, {"name": "主任相談支援専門員配置加算（Ⅱ）", "unit": 100, "unitByService": null}]}, "障害児相談支援": {"soudan": true, "defs": [{"name": "初回加算", "group": "kobetsu", "unit": 500, "type": "plan", "count_limit": "", "unitText": "500単位", "info": "サービスによって単位が異なります：計画相談支援＝300単位／障害児相談支援＝500単位（業務ガイドラインP.108）。チェックすると行のサービスに応じた単位が自動で適用されます。\n【算定条件】新規に計画を作成、又は前6月間に障害福祉サービス等を利用していない者への計画作成月。契約から計画案交付まで3か月超で月2回以上面接した場合は最大3回を重ねて算定（合計月4回まで）→合計単位を数値で入力。\n【算定不可】退院・退所加算との併給、算定月の前6月に居宅介護支援事業所等連携加算を算定している場合。\n出典：業務ガイドラインP.136", "warn": "", "warnTag": "", "multi": false}, {"name": "退院・退所加算", "group": "kobetsu", "unit": 300, "type": "plan", "count_limit": "入院・入所期間中3回まで", "unitText": "300単位", "info": "【算定条件】退院・退所等に当たり施設職員と面談して必要な情報の提供を受け、サービス等利用計画を作成し、支給決定を受けた場合。サービス利用支援費（計画作成月）に併せて算定（300単位/回、入院・入所から退院・退所までに3回まで）。\n【併給不可】初回加算を算定する場合は算定不可。\n出典：業務ガイドラインP.137", "warn": "", "warnTag": "", "multi": true}, {"name": "医療・保育・教育機関等連携加算（面談等・計画作成月）", "group": "kobetsu", "unit": 200, "type": "plan", "count_limit": "月1回", "unitText": "200単位", "info": "【算定条件】福祉サービス等提供機関（障害福祉サービス等事業者を除く）の職員との面談又は会議により情報提供を受けたうえで、サービス利用支援（計画作成）を行った場合。\n【算定不可】初回加算・退院・退所加算を算定する場合、退院・退所する施設の職員のみから情報提供を受けた場合。\n出典：業務ガイドラインP.138", "warn": "", "warnTag": "", "multi": false}, {"name": "医療・保育・教育機関等連携加算（面談等・モニタリング月）", "group": "kobetsu", "unit": 300, "type": "monitor", "count_limit": "", "unitText": "300単位", "info": "", "warn": "⚠️統合先要確認：障害児相談支援の「面談等」連携加算はこの列に統合していますが、統合先は単位数（300単位）の一致のみで判定した推定です。実際の支援内容が「モニタリング月の面談等」か「通院同行」（右の列）かを個別に確認し、必要なら横浜市へ直接お問い合わせください。なお、R8開設説明会資料（R8.9.30）で、障害児相談支援にも「面談・会議（計画作成200／モニタリング300）」「通院同行300」の区分があることは確認済みです（列構成は妥当。旧列からの移行先のみ推定）。他の統合列（保育・教育等移行支援加算、サービス担当者会議実施加算）は名称・単位ともに横浜市資料で一致確認済みですが、本列のみ確度が異なります。", "warnTag": "統合先推定", "multi": false}, {"name": "医療・保育・教育機関等連携加算（通院同行）", "group": "kobetsu", "unit": 300, "type": "both", "count_limit": "月3回・同一病院は月1回", "unitText": "300単位", "info": "【算定条件】通院に同行し、病院等の職員に必要な情報を提供した場合。計画作成月・モニタリング月（基本報酬を算定する月）に限る。\n出典：業務ガイドラインP.138", "warn": "", "warnTag": "", "multi": true}, {"name": "医療・保育・教育機関等連携加算（情報提供）", "group": "kobetsu", "unit": 150, "type": "both", "count_limit": "区分ごと月1回", "unitText": "150単位", "info": "【算定条件】福祉サービス等提供機関からの求めに応じて情報提供した場合。計画作成月・モニタリング月に限る。①病院等・訪問看護事業所、②それ以外の区分ごとに月1回。同じ病院に通院同行で情報提供した月は重複算定不可。\n出典：業務ガイドラインP.139", "warn": "", "warnTag": "", "multi": false}, {"name": "サービス提供時モニタリング加算", "group": "kobetsu", "unit": 100, "type": "any", "count_limit": "月1回・専門員1人月39件まで", "unitText": "100単位", "info": "【算定条件】サービス提供事業所等を訪問し、サービス提供場面を直接確認して記録した場合。モニタリング月以外でも算定でき、単独請求も可（体制加算は付かない）。\n回数：利用者1人につき月1回。相談支援専門員1人が1月に請求できるのは39件まで（相談支援員は19件）。兼務先の事業所の確認は不可。\n出典：業務ガイドラインP.145、国QA(H30)問80", "warn": "", "warnTag": "", "multi": false}, {"name": "サービス担当者会議実施加算", "group": "kobetsu", "unit": 100, "type": "monitor", "count_limit": "月1回", "unitText": "100単位", "info": "計画相談支援・障害児相談支援のどちらでも、この同じ列に単位数を入力してください（横浜市の説明資料上、両サービスで同一の加算・単位として一覧化されています）。\n【算定不可】会議の結果、計画を変更してサービス利用支援費を算定する月（更新月を計画作成費で請求する月を含む）。医療・保育・教育機関等連携加算（面談等）を算定する月。\n出典：業務ガイドラインP.140", "warn": "", "warnTag": "", "multi": false}, {"name": "入院時情報連携加算（Ⅰ）", "group": "kobetsu", "unit": 300, "type": "any", "count_limit": "月1回", "unitText": "300単位", "info": "【算定条件】入院に当たり医療機関へ出向き、職員と面談して必要な情報を提供した場合。基本報酬のない月でも単独請求可（体制加算は付かない）。\n【併給不可】（Ⅰ）と（Ⅱ）の同時算定、同一医療機関への医療・保育・教育機関等連携加算。\n出典：業務ガイドラインP.141", "warn": "", "warnTag": "", "multi": false}, {"name": "入院時情報連携加算（Ⅱ）", "group": "kobetsu", "unit": 150, "type": "any", "count_limit": "月1回", "unitText": "150単位", "info": "【算定条件】（Ⅰ）以外の方法（FAX等）で必要な情報を提供した場合。単独請求可。（Ⅰ）との同時算定は不可。\n出典：業務ガイドラインP.141", "warn": "", "warnTag": "", "multi": false}, {"name": "居宅介護支援事業所等連携加算（計画相談）／保育・教育等移行支援加算（障害児相談）：訪問・会議参加", "group": "kobetsu", "unit": 300, "type": "interval", "count_limit": "", "unitText": "300単位", "info": "【2つの加算を1列で管理（目的・対象サービスが異なる別の加算です）】\n\n■計画相談支援 → 居宅介護支援事業所等連携加算（300単位/月）\n目的：介護保険移行・就職等に伴い利用を終了する際の引継ぎ支援\n連携先：居宅介護支援事業所（ケアマネ）、就業・生活支援センター、企業等\n\n■障害児相談支援 → 保育・教育等移行支援加算（300単位/月）\n目的：就学・進学・就職等に伴い障害児通所支援を終了する際の引継ぎ支援\n連携先：保育所、幼稚園、小中高校、特別支援学校、企業等\n要件：①月2回以上の居宅訪問面接 または ②他機関主催の会議への参加\n\n【算定タイミング】基本報酬を算定する月（計画作成月・モニタリング月）には算定できません。\n→ 基本報酬のない月にのみ算定可能です（集中支援加算と同じ考え方）。\n\n【併給不可（計画相談支援・障害児相談支援とも）】入院時情報連携加算・退院・退所加算を算定している月は算定不可（業務ガイドラインP.143）。\n\n【算定回数上限（計画相談支援・障害児相談支援とも）】\n・障害福祉サービス等の利用中：ア〜カの区分ごとに各2回まで\n・利用終了日から6か月以内：区分ごとに月1回まで（計画相談の支給決定最終月に請求）\n\n【記録の整備】面接日時・場所・内容、会議出席者、提供情報の要旨を記録し5年間保存。\n\n出典：業務ガイドラインP.142-143、R8集団指導資料P.166-168", "warn": "", "warnTag": "", "multi": false}, {"name": "居宅介護支援事業所等連携加算（計画相談）／保育・教育等移行支援加算（障害児相談）：情報提供", "group": "kobetsu", "unit": 150, "type": "any", "count_limit": "", "unitText": "150単位", "info": "【令和8年度資料で単位確認済み】\n■計画相談支援 → 居宅介護支援事業所等連携加算・情報提供＝150単位/月\n■障害児相談支援 → 保育・教育等移行支援加算・文書による情報提供＝150単位/月\nチェックすると150単位が自動適用されます。\n\n【算定要件】他機関との連携にあたり、心身の状況等に関する情報を、\nこの目的のために作成した文書により提供し、支援内容の検討に協力した場合。\n\n【算定タイミング（計画相談支援）】基本報酬を算定する月でも算定できます。基本報酬のない月に限られるのは「訪問・会議参加」だけです（業務ガイドラインP.142〜143、国QA(R3)VOL.2問30）。\n※障害児相談支援の保育・教育等移行支援加算は、こども青少年局の資料で算定月を確認してください。\n\n【併給不可】入院時情報連携加算・退院・退所加算を算定している月は算定不可（同P.143）。\n\n【算定回数上限】利用中は区分ごとに各2回まで、利用終了後6か月以内は月1回まで（同P.142）。\n\n【記録の整備】提供した情報の要旨等を記録し5年間保存。\n\n出典：令和8年度開所説明会資料P.52、業務ガイドラインP.142-143", "warn": "", "warnTag": "", "multi": false}, {"name": "集中支援加算（訪問・会議開催・参加）", "group": "kobetsu", "unit": 300, "type": "interval", "count_limit": "ア〜ウ各月1回（最大900）", "unitText": "300単位", "info": "【集中支援加算とは】計画作成月・モニタリング月「以外」の月にのみ算定できます（国QA(R3)VOL.2問30）。\n\n【この列でまとめて管理する3区分（それぞれ300単位・各月1回）】\nア 月2回以上の居宅等への訪問による面接（利用者又は市町村等の求めに応じて。うち月1回は居宅訪問）\nイ サービス担当者会議の開催（利用者又は家族の出席が必要）\nウ 関係機関が開催する会議への参加\n→ 同じ月に複数に該当する場合は、チェックを外して合計（最大900単位）を数値で入力してください。\n\n【入院時情報連携加算（Ⅰ）・退院・退所加算との関係】\n併給不可なのは「ウ 関係機関が開催する会議への参加」（300単位）のみです。両加算を算定した月でも、ア（訪問）・イ（会議開催）は算定できます（業務ガイドラインP.108、国QA(R3)VOL.2問27③）。\n\nウは居宅介護支援事業所等連携加算の会議参加と趣旨・つなぎ先が同じ場合は算定不可。\n出典：業務ガイドラインP.146〜147（⑧集中支援加算）", "warn": "", "warnTag": "", "multi": false}, {"name": "集中支援加算（通院同行）", "group": "kobetsu", "unit": 300, "type": "interval", "count_limit": "月3回・同一病院は月1回", "unitText": "300単位", "info": "【算定条件】計画作成月・モニタリング月「以外」の月に、利用者の通院に同行し、病院等の職員に必要な情報を提供した場合（300単位）。\n回数：1月に3回まで、同一の病院等は1月に1回まで（医療・保育・教育機関等連携加算の通院同行と同じ扱い）。\n出典：業務ガイドラインP.147・P.138", "warn": "", "warnTag": "", "multi": true}, {"name": "集中支援加算（情報提供）", "group": "kobetsu", "unit": 150, "type": "interval", "count_limit": "区分ごと月1回", "unitText": "150単位", "info": "【算定条件】計画作成月・モニタリング月「以外」の月に、福祉サービス等提供機関からの求めに応じて情報提供した場合（150単位）。\n回数：①病院等・訪問看護事業所、②それ以外の機関の区分ごとに月1回まで。\n出典：業務ガイドラインP.147・P.139", "warn": "", "warnTag": "", "multi": false}, {"name": "地域生活支援拠点等相談強化加算", "group": "kobetsu", "unit": 700, "type": "any", "count_limit": "月4回", "unitText": "700単位", "info": "", "warn": "", "warnTag": "", "multi": true}, {"name": "地域体制強化共同支援加算", "group": "kobetsu", "unit": 2000, "type": "any", "count_limit": "月1回", "unitText": "2000単位", "info": "【地域体制強化共同支援加算とは】2,000単位/月（利用者1人につき月1回を限度）。\n\n【算定要件】支援が困難な利用者に対して、相談支援専門員等が利用者の同意を得て、福祉サービス等を提供する事業者のうち3者以上と共同して、\n①会議により情報共有・支援内容を検討し、\n②在宅療養・地域生活に必要な説明・指導等の支援を共同して実施し、\n③地域課題を整理して協議会等に文書で報告した場合に算定できます。\n\n【算定に当たっての留意事項】\n・個別課題から地域課題を抽出し、協議会に参画して地域のサービス提供体制・社会資源の連携体制の構築を推進する趣旨の加算です。協議会へ報告する事例は、広く地域の関係者間で検討する必要がある課題を選定してください。\n・支援関係者が支援に要した費用は、指定特定相談支援事業所が負担することが望ましいとされています。\n・「地域体制強化共同支援加算報告書兼記録書」（市ホームページ掲載）を作成し、5年間保存。市町村長等から求めがあれば提出義務があります。\n\n【届出】算定には本市への手続きが必要です。運営規程に地域生活支援拠点である旨を規定し、体制届＋「地域生活支援拠点等の機能に関連する届出」の提出、および事業所所在区の自立支援協議会への報告が必要です。\n\n出典：横浜市業務ガイドラインP.149（⑩地域体制強化共同支援加算）・P.152（拠点関連加算の注意点）、報酬告示17、留意事項通知第四の20。確認日：2026-07-12", "warn": "", "warnTag": "", "multi": false}, {"name": "地域生活支援拠点等機能強化加算", "group": "kobetsu", "unit": 500, "type": "any", "count_limit": "月100回", "unitText": "500単位", "info": "", "warn": "⚠️ 横浜市では本加算を算定する事業所を想定していません。算定前に必ず障害施策推進課等へ確認してください。", "warnTag": "", "multi": false}, {"name": "遠隔地訪問加算", "group": "kobetsu", "unit": 300, "type": "any", "count_limit": "", "unitText": "300単位", "info": "【遠隔地訪問加算とは】300単位/回。特別地域に所在し、事業所から利用者の居宅等まで合理的な経路で概ね片道1時間を要する距離がある場合に、訪問を伴う対象加算と合わせて算定します。\n\n【重要：単純な1回=300単位ではありません】\n「300単位 × 対象加算の算定回数の合計」で算定します。訪問を伴う以下の対象加算を算定した回数を数え、その合計回数分だけチェックしてください（チェック1つ＝1回分＝300単位）。\n\n【対象となる加算（訪問・面接・通院同行を伴うもの）】\n①初回加算（契約〜計画交付が3か月超で月2回以上面接した場合。該当月数を回数としてカウント／最大3）\n②入院時情報連携加算（医療機関へ出向いて面談）\n③退院・退所加算\n④居宅介護支援事業所等連携加算（訪問による面接）\n⑤医療・保育・教育機関等連携加算（面談・会議、通院同行）\n⑥集中支援加算（訪問面接、通院同行）\n\n【算定要件】特別地域に所在し、片道概ね1時間を要する距離。訪問に要した時間・経路等を記録し保存。\n※神奈川県内の特別地域は清川村全域・相模原市の旧津久井町／旧藤野町・山北町・湯河原町・松田町・南足柄市の旧北足柄村・大井町の旧相和村です。横浜市内の利用者は対象外です（業務ガイドラインP.124）。\n\n【障害児相談支援の場合】単位・算定可否は最新の一次資料でご確認ください（この定義は計画相談支援・業務ガイドラインP.151で確認したものです）。\n\n出典：横浜市業務ガイドラインP.151（⑫遠隔地訪問加算・300単位/回）、報酬告示18、留意事項通知第四の21。確認日：2026-07-10", "warn": "", "warnTag": "", "multi": false}, {"name": "利用者負担上限額管理加算", "group": "kobetsu", "unit": 150, "type": "any", "count_limit": "月1回", "unitText": "150単位", "info": "計画相談支援の事業所が上限管理事業所になるのは、モニタリングが毎月決定されている利用者のみです（区役所の決定が必要）。\n出典：業務ガイドラインP.135", "warn": "", "warnTag": "", "multi": false}, {"name": "行動障害支援体制加算（Ⅰ）", "group": "taisei", "unit": 60, "type": "", "count_limit": "", "unitText": "60単位", "info": "", "warn": "", "warnTag": "", "multi": false}, {"name": "行動障害支援体制加算（Ⅱ）", "group": "taisei", "unit": 30, "type": "", "count_limit": "", "unitText": "30単位", "info": "", "warn": "", "warnTag": "", "multi": false}, {"name": "要医療児者支援体制加算（Ⅰ）", "group": "taisei", "unit": 60, "type": "", "count_limit": "", "unitText": "60単位", "info": "", "warn": "", "warnTag": "", "multi": false}, {"name": "要医療児者支援体制加算（Ⅱ）", "group": "taisei", "unit": 30, "type": "", "count_limit": "", "unitText": "30単位", "info": "", "warn": "", "warnTag": "", "multi": false}, {"name": "精神障害者支援体制加算（Ⅰ）", "group": "taisei", "unit": 60, "type": "", "count_limit": "", "unitText": "60単位", "info": "", "warn": "", "warnTag": "", "multi": false}, {"name": "精神障害者支援体制加算（Ⅱ）", "group": "taisei", "unit": 30, "type": "", "count_limit": "", "unitText": "30単位", "info": "", "warn": "", "warnTag": "", "multi": false}, {"name": "高次脳機能障害者支援体制加算（Ⅰ）", "group": "taisei", "unit": 60, "type": "", "count_limit": "", "unitText": "60単位", "info": "", "warn": "", "warnTag": "", "multi": false}, {"name": "高次脳機能障害者支援体制加算（Ⅱ）", "group": "taisei", "unit": 30, "type": "", "count_limit": "", "unitText": "30単位", "info": "", "warn": "", "warnTag": "", "multi": false}, {"name": "ピアサポート体制加算", "group": "taisei", "unit": 100, "type": "", "count_limit": "", "unitText": "100単位", "info": "", "warn": "", "warnTag": "", "multi": false}, {"name": "主任相談支援専門員配置加算（Ⅰ）", "group": "taisei", "unit": 300, "type": "", "count_limit": "", "unitText": "300単位", "info": "", "warn": "", "warnTag": "", "multi": false}, {"name": "主任相談支援専門員配置加算（Ⅱ）", "group": "taisei", "unit": 100, "type": "", "count_limit": "", "unitText": "100単位", "info": "", "warn": "", "warnTag": "", "multi": false}], "raw": [{"name": "初回加算", "unit": 300, "unitByService": {"計画相談支援": 300, "障害児相談支援": 500}}, {"name": "退院・退所加算", "unit": 300, "unitByService": null}, {"name": "医療・保育・教育機関等連携加算（面談等・計画作成月）", "unit": 200, "unitByService": null}, {"name": "医療・保育・教育機関等連携加算（面談等・モニタリング月）", "unit": 300, "unitByService": null}, {"name": "医療・保育・教育機関等連携加算（通院同行）", "unit": 300, "unitByService": null}, {"name": "医療・保育・教育機関等連携加算（情報提供）", "unit": 150, "unitByService": null}, {"name": "サービス提供時モニタリング加算", "unit": 100, "unitByService": null}, {"name": "サービス担当者会議実施加算", "unit": 100, "unitByService": null}, {"name": "入院時情報連携加算（Ⅰ）", "unit": 300, "unitByService": null}, {"name": "入院時情報連携加算（Ⅱ）", "unit": 150, "unitByService": null}, {"name": "居宅介護支援事業所等連携加算（計画相談）／保育・教育等移行支援加算（障害児相談）：訪問・会議参加", "unit": 300, "unitByService": null}, {"name": "居宅介護支援事業所等連携加算（計画相談）／保育・教育等移行支援加算（障害児相談）：情報提供", "unit": 150, "unitByService": {"計画相談支援": 150, "障害児相談支援": 150}}, {"name": "集中支援加算（訪問・会議開催・参加）", "unit": 300, "unitByService": null}, {"name": "集中支援加算（通院同行）", "unit": 300, "unitByService": null}, {"name": "集中支援加算（情報提供）", "unit": 150, "unitByService": null}, {"name": "地域生活支援拠点等相談強化加算", "unit": 700, "unitByService": null}, {"name": "地域体制強化共同支援加算", "unit": 2000, "unitByService": null}, {"name": "地域生活支援拠点等機能強化加算", "unit": 500, "unitByService": null}, {"name": "遠隔地訪問加算", "unit": 300, "unitByService": null}, {"name": "利用者負担上限額管理加算", "unit": 150, "unitByService": null}, {"name": "行動障害支援体制加算（Ⅰ）", "unit": 60, "unitByService": null}, {"name": "行動障害支援体制加算（Ⅱ）", "unit": 30, "unitByService": null}, {"name": "要医療児者支援体制加算（Ⅰ）", "unit": 60, "unitByService": null}, {"name": "要医療児者支援体制加算（Ⅱ）", "unit": 30, "unitByService": null}, {"name": "精神障害者支援体制加算（Ⅰ）", "unit": 60, "unitByService": null}, {"name": "精神障害者支援体制加算（Ⅱ）", "unit": 30, "unitByService": null}, {"name": "高次脳機能障害者支援体制加算（Ⅰ）", "unit": 60, "unitByService": null}, {"name": "高次脳機能障害者支援体制加算（Ⅱ）", "unit": 30, "unitByService": null}, {"name": "ピアサポート体制加算", "unit": 100, "unitByService": null}, {"name": "主任相談支援専門員配置加算（Ⅰ）", "unit": 300, "unitByService": null}, {"name": "主任相談支援専門員配置加算（Ⅱ）", "unit": 100, "unitByService": null}]}, "自立生活援助": {"soudan": false, "defs": [{"name": "初回加算", "group": "kobetsu", "unit": 500, "type": "first", "count_limit": "", "unitText": "500単位", "info": "【算定条件】利用開始月に算定。過去3か月間に自立生活援助を利用したことがない場合に限ります。\n出典：令和8年度相談系サービス事業所開設説明会資料（横浜市 R8.9.30）。確認日：2026-09-28", "warn": "", "warnTag": "", "multi": false}, {"name": "同行支援加算（2回以下）", "group": "kobetsu", "unit": 500, "type": "any", "count_limit": "", "unitText": "500単位", "info": "", "warn": "", "warnTag": "", "multi": false}, {"name": "同行支援加算（3回）", "group": "kobetsu", "unit": 750, "type": "any", "count_limit": "", "unitText": "750単位", "info": "", "warn": "", "warnTag": "", "multi": false}, {"name": "同行支援加算（4回以上）", "group": "kobetsu", "unit": 1000, "type": "any", "count_limit": "", "unitText": "1000単位", "info": "", "warn": "", "warnTag": "", "multi": false}, {"name": "日常生活支援情報提供加算", "group": "kobetsu", "unit": 100, "type": "any", "count_limit": "月1回", "unitText": "100単位", "info": "【算定条件】精神科病院等に通院する利用者の必要な情報を、あらかじめ利用者の同意を得て当該精神科病院等の職員に提供した場合（1人につき1月に1回まで）。\n出典：令和8年度相談系サービス事業所開設説明会資料（横浜市 R8.9.30）。確認日：2026-09-28", "warn": "", "warnTag": "", "multi": false}, {"name": "集中支援加算", "group": "kobetsu", "unit": 500, "type": "any", "count_limit": "", "unitText": "500単位", "info": "【算定条件】自立生活援助サービス費（Ⅰ）を算定する利用者に対して、月6回以上の訪問による支援を実施した場合。\n出典：令和8年度相談系サービス事業所開設説明会資料（横浜市 R8.9.30）。確認日：2026-09-28", "warn": "", "warnTag": "", "multi": false}, {"name": "緊急時支援加算（Ⅰ）", "group": "kobetsu", "unit": 711, "type": "any", "count_limit": "日ごと", "unitText": "711単位（拠点の届出あり＋50単位）", "info": "【拠点上乗せあり】地域生活支援拠点として届出済みの場合、さらに1日につき＋50単位（711→761単位/日）。上乗せ込みの合計単位数を数値で入力してください。\n【算定条件】利用者・家族からの要請に基づき、深夜（22時〜翌6時）に訪問または一時的な滞在による支援を行った場合。\n出典：R8集団指導資料", "warn": "", "warnTag": "", "multi": true}, {"name": "緊急時支援加算（Ⅱ）", "group": "kobetsu", "unit": 94, "type": "any", "count_limit": "", "unitText": "94単位", "info": "【算定条件】利用者又はその家族からの要請に基づき、深夜（22時〜翌6時）に電話による相談援助を行った場合（1日につき）。\n出典：令和8年度相談系サービス事業所開設説明会資料（横浜市 R8.9.30）。確認日：2026-09-28", "warn": "", "warnTag": "", "multi": false}, {"name": "地域居住支援体制強化推進加算", "group": "kobetsu", "unit": 500, "type": "any", "count_limit": "", "unitText": "500単位", "info": "", "warn": "", "warnTag": "", "multi": false}, {"name": "居住支援法人連携加算", "group": "kobetsu", "unit": 35, "type": "any", "count_limit": "", "unitText": "35単位", "info": "", "warn": "", "warnTag": "", "multi": false}, {"name": "地域生活支援拠点等機能強化加算", "group": "kobetsu", "unit": 500, "type": "any", "count_limit": "月100回", "unitText": "500単位", "info": "", "warn": "⚠️ 横浜市では本加算を算定する事業所を想定していません。算定前に必ず障害施策推進課等へ確認してください。", "warnTag": "", "multi": false}, {"name": "福祉専門職配置等加算（Ⅰ）", "group": "taisei", "unit": 450, "type": "", "count_limit": "", "unitText": "450単位", "info": "", "warn": "", "warnTag": "", "multi": false}, {"name": "福祉専門職配置等加算（Ⅱ）", "group": "taisei", "unit": 300, "type": "", "count_limit": "", "unitText": "300単位", "info": "", "warn": "", "warnTag": "", "multi": false}, {"name": "福祉専門職配置等加算（Ⅲ）", "group": "taisei", "unit": 180, "type": "", "count_limit": "", "unitText": "180単位", "info": "", "warn": "", "warnTag": "", "multi": false}, {"name": "ピアサポート体制加算", "group": "taisei", "unit": 100, "type": "", "count_limit": "", "unitText": "100単位", "info": "", "warn": "", "warnTag": "", "multi": false}, {"name": "居住支援連携体制加算", "group": "taisei", "unit": 35, "type": "", "count_limit": "", "unitText": "35単位", "info": "", "warn": "", "warnTag": "", "multi": false}], "raw": [{"name": "初回加算", "unit": 500, "unitByService": null}, {"name": "同行支援加算（2回以下）", "unit": 500, "unitByService": null}, {"name": "同行支援加算（3回）", "unit": 750, "unitByService": null}, {"name": "同行支援加算（4回以上）", "unit": 1000, "unitByService": null}, {"name": "日常生活支援情報提供加算", "unit": 100, "unitByService": null}, {"name": "集中支援加算", "unit": 500, "unitByService": null}, {"name": "緊急時支援加算（Ⅰ）", "unit": 711, "unitByService": null}, {"name": "緊急時支援加算（Ⅱ）", "unit": 94, "unitByService": null}, {"name": "地域居住支援体制強化推進加算", "unit": 500, "unitByService": null}, {"name": "居住支援法人連携加算", "unit": 35, "unitByService": null}, {"name": "地域生活支援拠点等機能強化加算", "unit": 500, "unitByService": null}, {"name": "福祉専門職配置等加算（Ⅰ）", "unit": 450, "unitByService": null}, {"name": "福祉専門職配置等加算（Ⅱ）", "unit": 300, "unitByService": null}, {"name": "福祉専門職配置等加算（Ⅲ）", "unit": 180, "unitByService": null}, {"name": "ピアサポート体制加算", "unit": 100, "unitByService": null}, {"name": "居住支援連携体制加算", "unit": 35, "unitByService": null}]}, "地域移行支援": {"soudan": false, "defs": [{"name": "初回加算", "group": "kobetsu", "unit": 500, "type": "first", "count_limit": "", "unitText": "500単位", "info": "【算定条件】利用を開始した月に算定。\n出典：令和8年度相談系サービス事業所開設説明会資料（横浜市 R8.9.30）。確認日：2026-09-28", "warn": "", "warnTag": "", "multi": false}, {"name": "集中支援加算", "group": "kobetsu", "unit": 500, "type": "any", "count_limit": "", "unitText": "500単位", "info": "【算定条件】月6日以上の面接・同行による支援を行った場合。\n出典：令和8年度相談系サービス事業所開設説明会資料（横浜市 R8.9.30）。確認日：2026-09-28", "warn": "", "warnTag": "", "multi": false}, {"name": "退院・退所月加算", "group": "kobetsu", "unit": 2700, "type": "any", "count_limit": "", "unitText": "2700単位", "info": "【算定条件】退院・退所した月に算定。\n【上乗せ】入院期間が3月以上1年未満の場合はさらに500単位（2,700→3,200単位）。該当する場合は合計単位数を数値で入力してください。\n出典：令和8年度相談系サービス事業所開設説明会資料（横浜市 R8.9.30）。確認日：2026-09-28", "warn": "", "warnTag": "", "multi": false}, {"name": "地域移行促進加算（Ⅰ）", "group": "kobetsu", "unit": 120, "type": "any", "count_limit": "日ごと", "unitText": "120単位", "info": "", "warn": "", "warnTag": "", "multi": false}, {"name": "地域移行促進加算（Ⅱ）", "group": "kobetsu", "unit": 60, "type": "any", "count_limit": "日ごと・月3回まで", "unitText": "60単位", "info": "", "warn": "", "warnTag": "", "multi": true}, {"name": "体験利用加算（Ⅰ）", "group": "kobetsu", "unit": 500, "type": "any", "count_limit": "", "unitText": "500単位（拠点の届出あり＋50単位）", "info": "【拠点上乗せあり】拠点届出済みの場合、さらに1日につき＋50単位（500→550単位/日）。上乗せ込みの合計を数値で入力。\n【算定条件】障害福祉サービスの体験的な利用支援の開始日〜5日目。地域移行支援決定期間の6か月につき15日まで。\n出典：R8集団指導資料", "warn": "", "warnTag": "", "multi": true}, {"name": "体験利用加算（Ⅱ）", "group": "kobetsu", "unit": 250, "type": "any", "count_limit": "", "unitText": "250単位（拠点の届出あり＋50単位）", "info": "【拠点上乗せあり】拠点届出済みの場合、さらに1日につき＋50単位（250→300単位/日）。上乗せ込みの合計を数値で入力。\n【算定条件】体験的な利用支援の6日目〜15日目。\n出典：R8集団指導資料", "warn": "", "warnTag": "", "multi": true}, {"name": "体験宿泊加算（Ⅰ）", "group": "kobetsu", "unit": 300, "type": "any", "count_limit": "", "unitText": "300単位（拠点の届出あり＋50単位）", "info": "【拠点上乗せあり】拠点届出済みの場合、さらに1日につき＋50単位（300→350単位/日）。上乗せ込みの合計を数値で入力。\n【算定条件】体験的な宿泊支援（見守り巡回なし）。（Ⅰ）（Ⅱ）合計で6か月につき15日まで。\n出典：R8集団指導資料", "warn": "", "warnTag": "", "multi": true}, {"name": "体験宿泊加算（Ⅱ）", "group": "kobetsu", "unit": 700, "type": "any", "count_limit": "", "unitText": "700単位（拠点の届出あり＋50単位）", "info": "【拠点上乗せあり】拠点届出済みの場合、さらに1日につき＋50単位（700→750単位/日）。上乗せ込みの合計を数値で入力。\n【算定条件】夜間・深夜を通した見守り＋複数回以上の巡回による支援を行った場合。\n出典：R8集団指導資料", "warn": "", "warnTag": "", "multi": true}, {"name": "地域居住支援体制強化推進加算", "group": "kobetsu", "unit": 500, "type": "any", "count_limit": "", "unitText": "500単位", "info": "", "warn": "", "warnTag": "", "multi": false}, {"name": "ピアサポート体制加算", "group": "taisei", "unit": 100, "type": "", "count_limit": "", "unitText": "100単位", "info": "", "warn": "", "warnTag": "", "multi": false}, {"name": "居住支援連携体制加算", "group": "taisei", "unit": 35, "type": "", "count_limit": "", "unitText": "35単位", "info": "", "warn": "", "warnTag": "", "multi": false}], "raw": [{"name": "初回加算", "unit": 500, "unitByService": null}, {"name": "集中支援加算", "unit": 500, "unitByService": null}, {"name": "退院・退所月加算", "unit": 2700, "unitByService": null}, {"name": "地域移行促進加算（Ⅰ）", "unit": 120, "unitByService": null}, {"name": "地域移行促進加算（Ⅱ）", "unit": 60, "unitByService": null}, {"name": "体験利用加算（Ⅰ）", "unit": 500, "unitByService": null}, {"name": "体験利用加算（Ⅱ）", "unit": 250, "unitByService": null}, {"name": "体験宿泊加算（Ⅰ）", "unit": 300, "unitByService": null}, {"name": "体験宿泊加算（Ⅱ）", "unit": 700, "unitByService": null}, {"name": "地域居住支援体制強化推進加算", "unit": 500, "unitByService": null}, {"name": "ピアサポート体制加算", "unit": 100, "unitByService": null}, {"name": "居住支援連携体制加算", "unit": 35, "unitByService": null}]}, "地域定着支援": {"soudan": false, "defs": [{"name": "緊急時支援費（Ⅰ）", "group": "kobetsu", "unit": 734, "type": "any", "count_limit": "", "unitText": "734単位（拠点の届出あり＋50単位）", "info": "【拠点上乗せあり】地域生活支援拠点として届出済みの場合、さらに＋50単位（734→784単位）。上乗せ込みの合計単位数を数値で入力してください。\n出典：R8集団指導資料「対象となる加算」", "warn": "", "warnTag": "", "multi": true}, {"name": "緊急時支援費（Ⅱ）", "group": "kobetsu", "unit": 98, "type": "any", "count_limit": "", "unitText": "98単位", "info": "【算定条件】利用者又はその家族等からの要請に基づき、深夜（22時〜翌6時）に電話により直接本人又は家族等へ緊急的な支援が必要な相談対応を行った場合（1日につき）。\n・予定確認等の電話連絡、メールでの対応は対象外。\n・深夜の電話後に居宅等へ出向いて支援した日は緊急時支援費（Ⅰ）のみ算定し、（Ⅱ）との併給は不可。\n出典：令和8年度相談系サービス事業所開設説明会資料（横浜市 R8.9.30）。確認日：2026-09-28", "warn": "", "warnTag": "", "multi": false}, {"name": "日常生活支援情報提供加算", "group": "kobetsu", "unit": 100, "type": "any", "count_limit": "月1回", "unitText": "100単位", "info": "【算定条件】精神科病院等に通院する利用者の必要な情報を当該精神科病院等に提供した場合。\n出典：令和8年度相談系サービス事業所開設説明会資料（横浜市 R8.9.30）。確認日：2026-09-28", "warn": "", "warnTag": "", "multi": false}, {"name": "地域居住支援体制強化推進加算", "group": "kobetsu", "unit": 500, "type": "any", "count_limit": "", "unitText": "500単位", "info": "", "warn": "", "warnTag": "", "multi": false}, {"name": "地域生活支援拠点等機能強化加算", "group": "kobetsu", "unit": 500, "type": "any", "count_limit": "月100回", "unitText": "500単位", "info": "", "warn": "⚠️ 横浜市では本加算を算定する事業所を想定していません。算定前に必ず障害施策推進課等へ確認してください。", "warnTag": "", "multi": false}, {"name": "ピアサポート体制加算", "group": "taisei", "unit": 100, "type": "", "count_limit": "", "unitText": "100単位", "info": "", "warn": "", "warnTag": "", "multi": false}, {"name": "居住支援連携体制加算", "group": "taisei", "unit": 35, "type": "", "count_limit": "", "unitText": "35単位", "info": "", "warn": "", "warnTag": "", "multi": false}], "raw": [{"name": "緊急時支援費（Ⅰ）", "unit": 734, "unitByService": null}, {"name": "緊急時支援費（Ⅱ）", "unit": 98, "unitByService": null}, {"name": "日常生活支援情報提供加算", "unit": 100, "unitByService": null}, {"name": "地域居住支援体制強化推進加算", "unit": 500, "unitByService": null}, {"name": "地域生活支援拠点等機能強化加算", "unit": 500, "unitByService": null}, {"name": "ピアサポート体制加算", "unit": 100, "unitByService": null}, {"name": "居住支援連携体制加算", "unit": 35, "unitByService": null}]}};
-const ADR=(function(){const AR_FIRST="初回加算";const AR_TAIIN="退院・退所加算";const AR_IRYO_P="医療・保育・教育機関等連携加算（面談等・計画作成月）";const AR_IRYO_M="医療・保育・教育機関等連携加算（面談等・モニタリング月）";const AR_IRYO_T="医療・保育・教育機関等連携加算（通院同行）";const AR_IRYO_I="医療・保育・教育機関等連携加算（情報提供）";const AR_SPM="サービス提供時モニタリング加算";const AR_TANTO="サービス担当者会議実施加算";const AR_NYU1="入院時情報連携加算（Ⅰ）";const AR_NYU2="入院時情報連携加算（Ⅱ）";const AR_KYO_V="居宅介護支援事業所等連携加算（計画相談）／保育・教育等移行支援加算（障害児相談）：訪問・会議参加";const AR_KYO_I="居宅介護支援事業所等連携加算（計画相談）／保育・教育等移行支援加算（障害児相談）：情報提供";const AR_SHU_V="集中支援加算（訪問・会議開催・参加）";const AR_SHU_T="集中支援加算（通院同行）";const AR_SHU_I="集中支援加算（情報提供）";const AR_JOGEN="利用者負担上限額管理加算";
-const AR_CAPS={"退院・退所加算": 900, "医療・保育・教育機関等連携加算（面談等・計画作成月）": 200, "医療・保育・教育機関等連携加算（面談等・モニタリング月）": 300, "医療・保育・教育機関等連携加算（通院同行）": 900, "医療・保育・教育機関等連携加算（情報提供）": 300, "サービス提供時モニタリング加算": 100, "サービス担当者会議実施加算": 100, "入院時情報連携加算（Ⅰ）": 300, "入院時情報連携加算（Ⅱ）": 150, "集中支援加算（訪問・会議開催・参加）": 900, "集中支援加算（通院同行）": 900, "集中支援加算（情報提供）": 300, "利用者負担上限額管理加算": 150, "地域体制強化共同支援加算": 2000, "地域生活支援拠点等相談強化加算": 2800};const AR_TAISEI_PAIRS=["行動障害支援体制加算", "要医療児者支援体制加算", "精神障害者支援体制加算", "高次脳機能障害者支援体制加算", "主任相談支援専門員配置加算"];
-const TAISEI_ADDONS_SOUDAN=[{"name": "行動障害支援体制加算（Ⅰ）"}, {"name": "行動障害支援体制加算（Ⅱ）"}, {"name": "要医療児者支援体制加算（Ⅰ）"}, {"name": "要医療児者支援体制加算（Ⅱ）"}, {"name": "精神障害者支援体制加算（Ⅰ）"}, {"name": "精神障害者支援体制加算（Ⅱ）"}, {"name": "高次脳機能障害者支援体制加算（Ⅰ）"}, {"name": "高次脳機能障害者支援体制加算（Ⅱ）"}, {"name": "ピアサポート体制加算"}, {"name": "主任相談支援専門員配置加算（Ⅰ）"}, {"name": "主任相談支援専門員配置加算（Ⅱ）"}];
-const SVC_SHOGAIJI="障害児相談支援",RENEWAL_BILLING_PLAN="計画作成費で請求（更新月に計画作成）",RENEWAL_BILLING_MONITOR="モニタリング費で請求",MON_RULE_M1="m1",MON_RULE_CERT="cert";
-let __plan=true;function getRenewalBillingMode_(){return __plan?RENEWAL_BILLING_PLAN:RENEWAL_BILLING_MONITOR}
-function getSoudanCycle_(u){return {rule:u&&u.monthly?MON_RULE_M1:"std"}}
-function evaluateAddonRules_(svc, kind, v, user) {
-  var msgs = [];
-  function has(n) { return (v[n] || 0) > 0; }
-  var planMode = getRenewalBillingMode_() === RENEWAL_BILLING_PLAN;
-  var planBilled = kind === "plan" || (kind === "renewal" && planMode);
-  var monBilled = kind === "monitoring" || (kind === "renewal" && !planMode);
-  var baseMonth = kind === "plan" || kind === "monitoring" || kind === "renewal";
-  var shu = has(AR_SHU_V) || has(AR_SHU_T) || has(AR_SHU_I);
-
-  if (has(AR_FIRST) && kind !== "plan") msgs.push("初回加算は新規の計画作成月のみ（P.136）");
-  if (has(AR_TAIIN) && !planBilled) msgs.push("退院・退所加算は計画作成（サービス利用支援費）の月に算定（P.137）");
-  if (has(AR_FIRST) && has(AR_TAIIN)) msgs.push("初回加算と退院・退所加算は併給不可（P.137）");
-  if ((has(AR_IRYO_P) || has(AR_IRYO_M)) && (has(AR_FIRST) || has(AR_TAIIN))) msgs.push("医療・保育・教育機関等連携加算（面談等）は初回加算・退院・退所加算と同月不可（P.138）");
-  if (has(AR_IRYO_P) && !planBilled) msgs.push("連携加算（面談等・計画作成月）は計画作成月のみ（P.138）");
-  if (has(AR_IRYO_M) && !monBilled) msgs.push("連携加算（面談等・モニタリング月）はモニタリング月のみ（P.138）");
-  if ((has(AR_IRYO_T) || has(AR_IRYO_I)) && !baseMonth) msgs.push("連携加算（通院同行・情報提供）は計画作成月・モニタリング月のみ（P.138〜139）");
-  if (has(AR_TANTO) && !monBilled) msgs.push("サービス担当者会議実施加算はモニタリング月のみ。計画作成費を算定する月は不可（P.140）");
-  if (has(AR_TANTO) && has(AR_IRYO_M)) msgs.push("サービス担当者会議実施加算と連携加算（面談等）は同月不可（P.140）");
-  if (has(AR_NYU1) && has(AR_NYU2)) msgs.push("入院時情報連携加算（Ⅰ）（Ⅱ）は同時算定不可（P.141）");
-  if (has(AR_KYO_V) && baseMonth) msgs.push("居宅介護支援事業所等連携加算（訪問・会議参加）は基本報酬のない月のみ（P.142〜143）");
-  if ((has(AR_KYO_V) || has(AR_KYO_I)) && (has(AR_NYU1) || has(AR_NYU2) || has(AR_TAIIN))) msgs.push("居宅介護支援事業所等連携加算は入院時情報連携加算・退院・退所加算の月は不可（P.143）");
-  if (shu && baseMonth) msgs.push("集中支援加算は基本報酬のない月のみ（P.146、国QA(R3)問30）");
-  // v18.40：併給不可なのは集中支援加算のうち「関係機関が開催する会議への参加」（ウ）のみ（P.108、国QA(R3)VOL.2問27③）。
-  // この列は訪問・会議開催・会議参加をまとめて管理するため、会議参加が含まれていないかの確認を促す。
-  if (has(AR_SHU_V) && (has(AR_NYU1) || has(AR_TAIIN))) msgs.push("入院時情報連携加算（Ⅰ）・退院・退所加算の月は、集中支援加算の「会議参加」（300単位）は算定不可。訪問・会議開催の分のみか確認（P.108、国QA(R3)問27）");
-  if (has(AR_JOGEN)) {
-    var cy = null;
-    try { cy = getSoudanCycle_(user); } catch (e) {}
-    var monthly = cy && (cy.rule === MON_RULE_M1 || (cy.rule === MON_RULE_CERT && cy.cert && Object.keys(cy.cert).length === 12));
-    if (!monthly) msgs.push("利用者負担上限額管理加算は毎月モニタリングの利用者のみ（P.135）");
-  }
-  // 体制加算
-  var taiseiNames = TAISEI_ADDONS_SOUDAN.map(function(a) { return a.name; });
-  if (!baseMonth && taiseiNames.some(function(n) { return has(n); })) msgs.push("体制加算は基本報酬のない月は算定されません（請求では自動で0）（P.108）");
-  AR_TAISEI_PAIRS.forEach(function(p) {
-    if (has(p + "（Ⅰ）") && has(p + "（Ⅱ）")) msgs.push(p + "の（Ⅰ）（Ⅱ）が重複（P.125〜132）");
-  });
-  // 回数上限（単位換算）
-  Object.keys(AR_CAPS).forEach(function(n) {
-    if ((v[n] || 0) > AR_CAPS[n]) msgs.push(n.split("／")[0] + "が1か月の上限（" + AR_CAPS[n] + "単位）を超過");
-  });
-  var firstCap = svc === SVC_SHOGAIJI ? 2000 : 1200;
-  if ((v[AR_FIRST] || 0) > firstCap) msgs.push("初回加算が1か月の上限（4回＝" + firstCap + "単位）を超過（P.136）");
-  return msgs;
-}
-function resolveAddonValue_(val, addonDef, svc) {
-  if (val === true) {
-    if (addonDef.unitByService && svc && addonDef.unitByService[svc] !== undefined) {
-      return addonDef.unitByService[svc];
-    }
-    return addonDef.unit;
-  }
-  if (val === false || val === "" || val === null || val === undefined) return 0;
-  return parseFloat(val) || 0;
-}
-function normalizeAddonCell_(v) {
-  if (v === true) return true;
-  if (typeof v === "number") return v > 0 ? v : false;
-  var s = String(v == null ? "" : v).trim();
-  if (s === "" || s.toUpperCase() === "FALSE") return false;
-  if (s.toUpperCase() === "TRUE") return true;
-  var n = parseFloat(s);
-  return isNaN(n) || n <= 0 ? false : n;
-}
-function byName(svc,values){const raw=ADDEF[svc].raw,v={};(values||[]).forEach((val,i)=>{if(!raw[i])return;const u=resolveAddonValue_(normalizeAddonCell_(val),raw[i],svc);if(u>0)v[raw[i].name]=u});return v}
-return {check(svc,kind,values,opt){if(!ADDEF[svc]||!ADDEF[svc].soudan)return [];__plan=!(opt&&opt.renewMonitor);try{return evaluateAddonRules_(svc,kind,byName(svc,values),{monthly:!!(opt&&opt.monthly)})}catch(e){return []}},PLAN:RENEWAL_BILLING_PLAN,MON:RENEWAL_BILLING_MONITOR}})();
-/* ===== 加算入力チェックの請求額：v18.63 の請求計算（基本報酬・減加算・処遇改善・金額の式）を移植。関数は原文のまま ===== */
-const ADB=(function(){const SVC_KEIKAKU="計画相談支援";const SVC_SHOGAIJI="障害児相談支援";const SVC_JIRITSU="自立生活援助";const SVC_ITEN="地域移行支援";const SVC_TEICHAKU="地域定着支援";const CATEGORY_FEES={"通常（Ⅰ）": {"plan": 1572, "monitor": 1308}, "通常（Ⅱ）": {"plan": 732, "monitor": 606}, "機能強化型（Ⅰ）": {"plan": 2014, "monitor": 1761}, "機能強化型（Ⅱ）": {"plan": 1914, "monitor": 1661}, "機能強化型（Ⅲ）": {"plan": 1822, "monitor": 1558}, "機能強化型（Ⅳ）": {"plan": 1672, "monitor": 1408}};const SHOGAIJI_FEES={"通常（Ⅰ）": {"plan": 1766, "monitor": 1448}, "通常（Ⅱ）": {"plan": 815, "monitor": 662}, "機能強化型（Ⅰ）": {"plan": 2201, "monitor": 1896}, "機能強化型（Ⅱ）": {"plan": 2101, "monitor": 1796}, "機能強化型（Ⅲ）": {"plan": 2016, "monitor": 1699}, "機能強化型（Ⅳ）": {"plan": 1866, "monitor": 1548}};const JIRITSU_FEES={"サービス費(Ⅰ)-30人未満": {"monthly": 1566}, "サービス費(Ⅰ)-30人以上": {"monthly": 1095}, "サービス費(Ⅱ)-30人未満": {"monthly": 1172}, "サービス費(Ⅱ)-30人以上": {"monthly": 821}, "サービス費(Ⅲ)": {"monthly": 700}};const ITEN_FEES={"サービス費(Ⅰ)": {"monthly": 3613}, "サービス費(Ⅱ)": {"monthly": 3157}, "サービス費(Ⅲ)": {"monthly": 2422}};const TEICHAKU_BASE_UNIT=315;const SHOGU_RATE_SOUDAN=0.051;const SHOGU_RATE_JIRITSU=0.115;const SHOGU_RATE_CHIIKI=0.051;const SHOGU_SOUDAN_START_YEAR=2026;const SHOGU_SOUDAN_START_MONTH=6;const SHOGU_JIRITSU_TIERS=["Ⅰイ", "Ⅰロ", "Ⅱイ", "Ⅱロ", "Ⅲ", "Ⅳ", "算定しない"];const SHOGU_JIRITSU_TIER_DEFAULT="Ⅰイ";const SHOGU_JIRITSU_RATES_FROM_R806={"Ⅰイ": 0.115, "Ⅰロ": 0.119, "Ⅱイ": 0.113, "Ⅱロ": 0.117, "Ⅲ": 0.098, "Ⅳ": 0.081};const SHOGU_JIRITSU_RATES_UNTIL_R805={"Ⅰイ": 0.103, "Ⅰロ": 0.103, "Ⅱイ": 0.101, "Ⅱロ": 0.101, "Ⅲ": 0.086, "Ⅳ": 0.069};const ADJ_KYOTAKU_1="居宅介護支援費重複減算（Ⅰ）要介護1・2";const ADJ_KYOTAKU_2="居宅介護支援費重複減算（Ⅱ）要介護3〜5";const ADJ_YOBO="介護予防支援費重複減算（要支援1・2）";const ADJ_SPECIAL="特別地域加算（厚労省告示の地域に居住）";const ADJ_OPTIONS=["居宅介護支援費重複減算（Ⅰ）要介護1・2", "居宅介護支援費重複減算（Ⅱ）要介護3〜5", "介護予防支援費重複減算（要支援1・2）", "特別地域加算（厚労省告示の地域に居住）"];const ADJ_KYOTAKU_UNITS={"std": {"plan": {"1": 582, "2": 894}, "monitor": {"1": 633, "2": 945}}, "II": {"plan": {"1": 0, "2": 54}, "monitor": {"1": 0, "2": 243}}};const ADJ_YOBO_UNITS=20;const OFFICE_REDUCTIONS=[{"name": "情報公表未報告減算", "rate": 0.05, "note": "情報公表対象サービス等情報を報告していない場合、所定単位数の100分の5を減算（業務ガイドラインP.123）"}, {"name": "業務継続計画未策定減算", "rate": 0.01, "note": "業務継続計画を策定し必要な措置を講じていない場合、所定単位数の100分の1を減算（業務ガイドラインP.123）"}, {"name": "虐待防止措置未実施減算", "rate": 0.01, "note": "虐待防止の措置を講じていない場合、所定単位数の100分の1を減算（業務ガイドラインP.123）"}];const RENEWAL_BILLING_PLAN="計画作成費で請求（更新月に計画作成）";const RENEWAL_BILLING_MONITOR="モニタリング費で請求";
-let __st={plan:true,red:[],tier:SHOGU_JIRITSU_TIER_DEFAULT};
-function getRenewalBillingMode_(){return __st.plan?RENEWAL_BILLING_PLAN:RENEWAL_BILLING_MONITOR}
-function getOfficeReductions_(){return OFFICE_REDUCTIONS.filter(r=>__st.red.includes(r.name))}
-function getJiritsuShoguTier_(){return __st.tier}
-function keikakuBaseUnit_(user, billing) {
-  if (isDualConsultationUser_(user)) return 0;
-  var fees = CATEGORY_FEES[user.category] || CATEGORY_FEES["通常（Ⅰ）"];
-  if (billing === "plan") return fees.plan;
-  if (billing === "renewal") return getRenewalBillingMode_() === RENEWAL_BILLING_PLAN ? fees.plan : fees.monitor;
-  if (billing === "monitoring") return fees.monitor;
-  return 0;
-}
-function shogaijiBaseUnit_(user, billing) {
-  var fees = SHOGAIJI_FEES[user.category] || SHOGAIJI_FEES["通常（Ⅰ）"];
-  if (billing === "plan") return fees.plan;
-  if (billing === "renewal") return getRenewalBillingMode_() === RENEWAL_BILLING_PLAN ? fees.plan : fees.monitor;
-  if (billing === "monitoring") return fees.monitor;
-  return 0;
-}
-function autoBaseUnitForBilling_(user, svc, billing) {
-  if (svc === SVC_KEIKAKU) return keikakuBaseUnit_(user, billing);
-  if (svc === SVC_SHOGAIJI) return shogaijiBaseUnit_(user, billing);
-  return null;
-}
-function isDualConsultationUser_(user) {
-  var svcs = (user && user.services) || [];
-  return svcs.indexOf(SVC_KEIKAKU) >= 0 && svcs.indexOf(SVC_SHOGAIJI) >= 0;
-}
-function computeBaseAdjustment_(user, svc, billing, base) {
-  var b = Number(base) || 0;
-  if (!isSoudanSvc_(svc) || b <= 0) return 0;
-  var adj = 0;
-  getOfficeReductions_().forEach(function(r) { adj -= Math.round(b * r.rate); });
-  var ua = String(user && user.adjust || "").trim();
-  if (ua === ADJ_SPECIAL) adj += Math.round(b * 0.15);
-  var feeType = (billing === "plan" || (billing === "renewal" && getRenewalBillingMode_() === RENEWAL_BILLING_PLAN)) ? "plan" : "monitor";
-  var isII = user.category === "通常（Ⅱ）";
-  if (svc === SVC_KEIKAKU && (ua === ADJ_KYOTAKU_1 || ua === ADJ_KYOTAKU_2)) {
-    adj -= ADJ_KYOTAKU_UNITS[isII ? "II" : "std"][feeType][ua === ADJ_KYOTAKU_1 ? 1 : 2];
-  }
-  if (svc === SVC_KEIKAKU && ua === ADJ_YOBO && feeType === "monitor" && !isII) {
-    adj -= ADJ_YOBO_UNITS;
-  }
-  return adj;
-}
-function getShoguRateForServiceYm_(svc, ymText) {
-  var rate = getShoguRateForService(svc);
-  if (svc === SVC_JIRITSU) return getJiritsuShoguRate_(parseYmCell(ymText)); // v18.62：区分・提供月で切替
-  var ym = parseYmCell(ymText);
-  if (!ym) return rate;
-  if (ym.year * 12 + ym.month < SHOGU_SOUDAN_START_YEAR * 12 + SHOGU_SOUDAN_START_MONTH) return 0;
-  return rate;
-}
-function getShoguRateForService(svc) {
-  if (svc === SVC_JIRITSU) return SHOGU_RATE_JIRITSU;
-  if (svc === SVC_ITEN || svc === SVC_TEICHAKU) return SHOGU_RATE_CHIIKI;
-  return SHOGU_RATE_SOUDAN;
-}
-function getJiritsuShoguRate_(ym) {
-  var tier = getJiritsuShoguTier_();
-  if (tier === "算定しない") return 0;
-  var before = ym && (ym.year * 12 + ym.month < SHOGU_SOUDAN_START_YEAR * 12 + SHOGU_SOUDAN_START_MONTH);
-  return (before ? SHOGU_JIRITSU_RATES_UNTIL_R805 : SHOGU_JIRITSU_RATES_FROM_R806)[tier];
-}
-function parseYmCell(rawYm) {
-  if (rawYm instanceof Date) {
-    var dy = rawYm.getFullYear(), dm = rawYm.getMonth() + 1;
-    return (dy >= 1900 && dm >= 1 && dm <= 12) ? { year: dy, month: dm } : null;
-  }
-  var m = String(rawYm || "").match(/(\d{4})[年\/\-](\d{1,2})/);
-  if (!m) return null;
-  var y = parseInt(m[1], 10), mo = parseInt(m[2], 10);
-  if (y < 1900 || mo < 1 || mo > 12) return null;
-  return { year: y, month: mo };
-}
-function isSoudanSvc_(svc) {
-  return svc === SVC_KEIKAKU || svc === SVC_SHOGAIJI;
-}
-function R0(x){return Math.sign(x)*Math.round(+Math.abs(x).toPrecision(15))}
-function D0(x){return Math.sign(x)*Math.floor(+Math.abs(x).toPrecision(15))}
-function calc(o){__st={plan:!o.renewMonitor,red:o.reductions||[],tier:o.tier||SHOGU_JIRITSU_TIER_DEFAULT};
- const svc=o.svc,user={category:o.category,services:o.dual?[SVC_KEIKAKU,SVC_SHOGAIJI]:[svc],adjust:o.adjust||""};
- const billing=isSoudanSvc_(svc)?o.kind:"monthly";let auto=autoBaseUnitForBilling_(user,svc,billing);
- const D=(o.baseManual!==""&&o.baseManual!=null&&isFinite(+o.baseManual))?+o.baseManual:(auto===null?0:auto);
- let E=o.taisei||0;const F=o.kobetsu||0;if(isSoudanSvc_(svc)&&billing==="none")E=0;
- const L=computeBaseAdjustment_(user,svc,billing,D);const G=D+E+F+L;const rate=getShoguRateForServiceYm_(svc,o.ym);
- const H=G===0?0:R0(G*rate);const I=G+H;const J=I===0?0:D0(I*o.tanka);
- return {D,E,F,L,G,H,I,J,rate,auto}}
-return {calc,C:{CATEGORY_FEES,SHOGAIJI_FEES,JIRITSU_FEES,ITEN_FEES,TEICHAKU_BASE_UNIT,ADJ_OPTIONS,OFFICE_REDUCTIONS,SHOGU_JIRITSU_TIERS,SHOGU_JIRITSU_TIER_DEFAULT}}})();
-const ADV=document.getElementById("addv");let adReady=false;const ADK="kasan-flow-adchk";
-const AD={svc:"計画相談支援",kind:"plan",renewMonitor:false,monthly:false,vals:[],cat:"通常（Ⅰ）",ym:"",tanka:"10.96",red:[],adjust:"",dual:false,tier:ADB.C.SHOGU_JIRITSU_TIER_DEFAULT,base:""};
-function adYmNow(){const d=new Date();return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")}
-const KINDL={plan:"計画作成の月",monitoring:"モニタリングの月",renewal:"更新の月",none:"基本報酬のない月"};
-function adLoad(){try{const s=JSON.parse(localStorage.getItem(ADK)||"{}");if(ADDEF[s.svc])AD.svc=s.svc;if(KINDL[s.kind])AD.kind=s.kind;AD.renewMonitor=!!s.renewMonitor;AD.monthly=!!s.monthly;if(ADB.C.CATEGORY_FEES[s.cat])AD.cat=s.cat;if(s.tanka)AD.tanka=s.tanka;if(Array.isArray(s.red))AD.red=s.red;if(ADB.C.ADJ_OPTIONS.includes(s.adjust))AD.adjust=s.adjust;AD.dual=!!s.dual;if(ADB.C.SHOGU_JIRITSU_TIERS.includes(s.tier))AD.tier=s.tier}catch(e){}AD.ym=adYmNow();AD.base="";AD.vals=ADDEF[AD.svc].defs.map(()=>false)}
-function adSave(){try{localStorage.setItem(ADK,JSON.stringify({svc:AD.svc,kind:AD.kind,renewMonitor:AD.renewMonitor,monthly:AD.monthly,cat:AD.cat,tanka:AD.tanka,red:AD.red,adjust:AD.adjust,dual:AD.dual,tier:AD.tier}))}catch(e){}}
-function adUnits(v,d){if(v===true)return d.unit;if(!v)return 0;const n=parseFloat(v);return isNaN(n)?0:n}
-const KOPT=[["plan","計画作成の月"],["monitoring","モニタリングの月"],["renewal-p","更新の月（計画作成費で請求）"],["renewal-m","更新の月（モニタリング費で請求）"],["none","基本報酬のない月"]];
-function kindVal(){return AD.kind==="renewal"?(AD.renewMonitor?"renewal-m":"renewal-p"):AD.kind}
-function kindLabel(){return (KOPT.find(x=>x[0]===kindVal())||["",""])[1]}
-function renderAd(keep){if(!keep){adLoad();AD_OPEN=null}
- ADV.innerHTML=`<div class="card"><h2 id="adh">加算入力チェック</h2><p class="sub">加算の組み合わせが算定ルールに合うかを、入力する前に確かめます。スプレッドシートには保存されません。</p>
- <div class="inirow"><div><label for="adIni">利用者のイニシャル（保存用）</label><input id="adIni" maxlength="10" autocomplete="off" placeholder="例：Y.T" value="${esc(AD.ini||"")}"></div></div><div class="sform"><div class="w"><label for="adSvc">サービス</label><select id="adSvc">${Object.keys(ADDEF).map(s=>`<option${s===AD.svc?" selected":""}>${esc(s)}</option>`).join("")}</select></div>
- <div class="w" id="adKindW"><label for="adKind">この月の区分</label><select id="adKind">${KOPT.map(([v,l])=>`<option value="${v}"${v===kindVal()?" selected":""}>${l}</option>`).join("")}</select></div>
- <div id="adCatW"><label for="adCat">事業所区分</label><select id="adCat">${Object.keys(ADB.C.CATEGORY_FEES).map(c=>`<option${c===AD.cat?" selected":""}>${esc(c)}</option>`).join("")}</select></div>
- <div><label for="adYm">サービス提供月</label><input id="adYm" type="month" value="${AD.ym}"></div>
- <div class="w"><label for="adBase" id="adBaseL">基本報酬（単位）</label><input id="adBase" type="number" min="0" inputmode="numeric" placeholder="自動" value="${esc(AD.base)}"><span class="fnote" id="adBaseN"></span><div class="adref" id="adRef"></div></div></div>
- <details class="grpd" id="adCond"><summary>判定の条件<span class="cnt" id="adCondN"></span></summary>
-  <div class="sform"><div class="w"><label for="adRen">更新月の請求</label><select id="adRen"><option value="p">${esc(ADR.PLAN)}</option><option value="m"${AD.renewMonitor?" selected":""}>${esc(ADR.MON)}</option></select><span class="fnote" id="adRenN"></span></div></div>
-  <label class="tal"><input type="checkbox" id="adMon"${AD.monthly?" checked":""}>毎月モニタリングの利用者<small>上限額管理加算の判定に使用</small></label><span class="fnote" id="adMonN"></span></details>
- <details class="grpd" id="adBill"><summary>請求額の条件<span class="cnt" id="adBillN"></span></summary>
-  <div class="sform"><div><label for="adTanka">単価（円）</label><input id="adTanka" type="number" min="0" step="0.01" inputmode="decimal" value="${esc(AD.tanka)}"><span class="fnote">横浜市は10.96（2級地）</span></div>
-  <div id="adTierW"><label for="adTier">処遇改善加算の区分</label><select id="adTier">${ADB.C.SHOGU_JIRITSU_TIERS.map(t=>`<option${t===AD.tier?" selected":""}>${esc(t)}</option>`).join("")}</select></div>
-  <div class="w" id="adAdjW"><label for="adAdj">利用者ごとの減算・加算</label><select id="adAdj"><option value="">なし</option>${ADB.C.ADJ_OPTIONS.map(a=>`<option${a===AD.adjust?" selected":""}>${esc(a)}</option>`).join("")}</select></div></div>
-  <div id="adRedW"><p class="hint" style="margin:10px 0 0">事業所全体の減算</p>${ADB.C.OFFICE_REDUCTIONS.map(r=>`<label class="tal"><input type="checkbox" data-red="${esc(r.name)}"${AD.red.includes(r.name)?" checked":""}>${esc(r.name)}<small>${Math.round(r.rate*100)}％</small></label>`).join("")}</div>
-  <label class="tal" id="adDualW"><input type="checkbox" id="adDual"${AD.dual?" checked":""}>障害児相談支援と一体で実施している<small>計画相談支援の基本報酬は0</small></label></details><div class="savebox"><div class="sbr" style="align-items:center"><button class="l pri" id="adSv">この内容を保存</button><button class="l" id="adSvOver" hidden>上書き保存</button></div><p class="fnote" id="adSvMsg">イニシャルとサービス提供月を付けて、この端末のブラウザに保存します。氏名は入れないでください。</p></div><details class="grpd" id="asD"><summary>保存した内容<span class="cnt" id="asN">0</span></summary><div id="asBox"></div></details></div>
- <div class="card" style="margin-top:12px"><h3 class="sh3" style="margin-top:0">請求額の目安</h3><div id="adSum" aria-live="polite"></div><div id="adRes" aria-live="polite" style="margin-top:12px"></div><div id="adList"></div>
- <div class="tools"><button class="l" id="adCopy">結果をコピー</button><button class="l" id="adClr">チェックをすべて外す</button></div>
- <details class="tips"><summary>このチェックについて</summary><p>加算の一覧と算定ルールの確認は、「計画相談支援スケジュール管理」v18.63の加算入力と同じ内容です。算定ルールの自動確認は、元のシステムと同じく計画相談支援と障害児相談支援が対象です。基本報酬・処遇改善加算・請求額の計算も、元のシステムの月別請求一覧と同じ式です（処遇改善加算は、相談支援の4サービスは令和8年6月提供分から）。結果はスプレッドシートの加算入力で入力し直してください。</p></details></div>
- <div class="adbar" id="adBar"></div>`;
- const $=id=>document.getElementById(id);
- $("adSvc").onchange=e=>{AD.svc=e.target.value;AD.vals=ADDEF[AD.svc].defs.map(()=>false);AD.base="";$("adBase").value="";adSave();adDraw()};
- $("adKind").onchange=e=>{const v=e.target.value;if(v.startsWith("renewal")){AD.kind="renewal";AD.renewMonitor=v==="renewal-m"}else AD.kind=v;adSave();adDraw()};
- $("adRen").onchange=e=>{AD.renewMonitor=e.target.value==="m";adSave();adDraw();if(AD.kind==="renewal")toast("この月の区分も「"+kindLabel()+"」に合わせました")};
- $("adMon").onchange=e=>{AD.monthly=e.target.checked;adSave();adDraw()};
- $("adCat").onchange=e=>{AD.cat=e.target.value;adSave();adDraw(true)};$("adYm").onchange=e=>{AD.ym=e.target.value;adDraw(true)};
- $("adBase").oninput=e=>{AD.base=e.target.value;adDraw(true)};$("adTanka").oninput=e=>{AD.tanka=e.target.value;adSave();adDraw(true)};
- $("adTier").onchange=e=>{AD.tier=e.target.value;adSave();adDraw(true)};$("adAdj").onchange=e=>{AD.adjust=e.target.value;adSave();adDraw(true)};
- $("adDual").onchange=e=>{AD.dual=e.target.checked;adSave();adDraw(true)};
- $("adRedW").onchange=e=>{const n=e.target.dataset.red;if(!n)return;AD.red=e.target.checked?[...new Set([...AD.red,n])]:AD.red.filter(x=>x!==n);adSave();adDraw(true)};
- $("adRef").onclick=e=>{const b=e.target.closest("[data-u]");if(!b)return;AD.base=b.dataset.u;$("adBase").value=AD.base;adDraw(true)};
- $("adClr").onclick=()=>{AD.vals=AD.vals.map(()=>false);adDraw();toast("チェックをすべて外しました")};
- $("adCopy").onclick=()=>copy(adText());$("adSv").onclick=()=>asSave(false);$("adSvOver").onclick=()=>asSave(true);$("adIni").oninput=e=>{AD.ini=normIni(e.target.value)};asList();
- const L=$("adList");
- L.onclick=e=>{const t=e.target;if(t.classList.contains("adinfo")){t.closest(".adi").classList.toggle("open");t.setAttribute("aria-expanded",String(t.closest(".adi").classList.contains("open")));return}
-  if(t.dataset.q!=null){const j=+t.dataset.q;AD.vals[j]=ADDEF[AD.svc].defs[j].unit*(+t.dataset.k);adDraw();return}};
- L.onchange=e=>{const t=e.target;if(t.type==="checkbox"){AD.vals[+t.dataset.j]=t.checked;adDraw(true)}else if(t.type==="number"){const n=parseFloat(t.value);AD.vals[+t.dataset.n]=(t.value===""||isNaN(n)||n<=0)?false:n;adDraw()}};
- adDraw();adReady=true}
-function adMsgs(){const D=ADDEF[AD.svc];return D.soudan?ADR.check(AD.svc,AD.kind,AD.vals,{renewMonitor:AD.renewMonitor,monthly:AD.monthly}):null}
-function adDraw(keepList){const D=ADDEF[AD.svc],$=id=>document.getElementById(id);const soud=D.soudan;
- $("adKindW").hidden=!soud;$("adCond").hidden=!soud;$("adKind").value=kindVal();$("adRen").value=AD.renewMonitor?"m":"p";
- const jogen=D.defs.findIndex(d=>/上限額管理/.test(d.name));const jOn=jogen>=0&&!!AD.vals[jogen];
- $("adCondN").textContent=(AD.kind==="renewal"?(AD.renewMonitor?"更新：モニタリング費":"更新：計画作成費"):"区分に連動")+(AD.monthly?"・毎月":"");
- $("adRenN").textContent=AD.kind==="renewal"?"「この月の区分」と連動しています。ここで変えると区分の表示も変わります。":"この月は更新の月ではないため、計算には使いません（更新の月を選ぶと、この設定で計算します）。";
- $("adMonN").textContent=jOn?"上限額管理加算にチェックが入っているため、判定に使っています。":"上限額管理加算にチェックを入れたときだけ判定に使います。";
- $("adMon").closest(".tal").classList.toggle("dim",!jOn);$("adRen").closest("div").classList.toggle("dim",AD.kind!=="renewal");
- const kind=soud?AD.kind:"monthly";
- if(!keepList){let g="",h="";D.defs.forEach((d,j)=>{if(d.group!==g){g=d.group;h+=`<h3 class="sh3">${g==="taisei"?"体制加算（届出をしている場合）":"個別加算"}</h3>`}
-  const v=AD.vals[j],num=typeof v==="number";const na=(d.type==="plan"&&kind!=="plan"&&kind!=="renewal")||(d.type==="monitor"&&kind!=="monitoring"&&kind!=="renewal");
-  h+=`<div class="adi${v?" on":""}${na?" na":""}"><input type="checkbox" data-j="${j}" id="adc${j}"${v===true?" checked":""}${num?" disabled":""}><div class="nm"><label for="adc${j}">${esc(d.name)}</label><small>${esc(d.unitText)}${d.count_limit?"　"+esc(d.count_limit):""}${na?"　この月の区分では通常算定しません":""}</small>${d.warn?`<span class="adw">⚠ ${esc(d.warnTag||"要確認")}</span>`:""}${d.info||d.warn?`<button type="button" class="adinfo" aria-expanded="false">詳しく</button><div class="det">${esc((d.warn?d.warn+"\n":"")+(d.info||""))}</div>`:""}</div>
-  <div class="u"><input type="number" min="0" step="1" inputmode="numeric" data-n="${j}" placeholder="単位数" aria-label="${esc(d.name)}の単位数（複数回のとき）" value="${num?v:""}">${d.multi?`<div class="q">${[2,3,4].map(k=>`<button type="button" data-q="${j}" data-k="${k}">×${k}</button>`).join("")}</div>`:""}</div></div>`});
-  $("adList").innerHTML=h}
- else document.querySelectorAll("#adList .adi").forEach((el,j)=>el.classList.toggle("on",!!AD.vals[j]));
- const total=D.defs.reduce((s,d,j)=>s+adUnits(AD.vals[j],d),0),cnt=AD.vals.filter(Boolean).length,m=adMsgs();
- $("adRes").innerHTML=!cnt?`<p class="sjudge none">算定する加算にチェックを入れてください</p>`:(m===null?`<p class="sjudge none">このサービスは、算定ルールの自動確認の対象外です（元のシステムと同じ）</p>`:(m.length?`<div class="sjudge warn"><p style="margin:0 0 4px">算定ルールの確認が ${m.length} 件あります</p><ul class="adml">${m.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>`:`<p class="sjudge ok">算定ルール上の問題は見つかりませんでした</p>`));
- const B=adBillCalc();const soudan=soud,kei=AD.svc==="計画相談支援";
- $("adCatW").hidden=!soudan;$("adTierW").hidden=AD.svc!=="自立生活援助";$("adAdjW").hidden=!soudan;$("adRedW").hidden=!soudan;$("adDualW").hidden=!kei;
- $("adBaseL").textContent=soudan?"基本報酬（単位・空欄は自動）":"基本報酬（単位）";$("adBase").placeholder=soudan?String(B.auto===null?0:B.auto):"入力してください";
- $("adBaseN").textContent=soudan?(AD.base!==""?"手入力の値を使っています（空欄にすると自動に戻ります）":"事業所区分と月の区分から自動で計算しています"):"元のシステムと同じく手入力です。下の参考値から選べます。";
- const refs=AD.svc==="自立生活援助"?Object.entries(ADB.C.JIRITSU_FEES).map(([k,v])=>[k,v.monthly]):AD.svc==="地域移行支援"?Object.entries(ADB.C.ITEN_FEES).map(([k,v])=>[k,v.monthly]):AD.svc==="地域定着支援"?[["体制確保費",ADB.C.TEICHAKU_BASE_UNIT]]:[];
- $("adRef").innerHTML=refs.map(([k,u])=>`<button type="button" class="l sm" data-u="${u}">${esc(k)}　${u}</button>`).join("");
- $("adBillN").textContent="単価 "+simNum(AD.tanka,10.96)+(soudan&&AD.red.length?"・減算"+AD.red.length:"")+(soudan&&AD.adjust?"・利用者調整あり":"");
- $("adSum").innerHTML=adBillHTML(B);
- $("adBar").innerHTML=`<span>合計 <b>${B.I.toLocaleString()}</b> 単位　<b>${B.J.toLocaleString()}</b> 円</span>${m&&m.length?`<a href="#adRes" class="adbw">確認 ${m.length}件</a>`:""}<button type="button" class="adbs" id="adBarSv">保存</button>`;$("adBarSv").onclick=()=>{const b=$("adSv");b.scrollIntoView({block:"center",behavior:"smooth"});b.focus({preventScroll:true})}}
-function adBillCalc(){const D=ADDEF[AD.svc];let tai=0,kob=0;D.defs.forEach((d,j)=>{const u=adUnits(AD.vals[j],d);if(d.group==="taisei")tai+=u;else kob+=u});
- const ym=/^\d{4}-\d{2}$/.test(AD.ym)?AD.ym.replace("-","年")+"月":"";
- return ADB.calc({svc:AD.svc,kind:AD.kind,category:AD.cat,dual:AD.dual&&AD.svc==="計画相談支援",adjust:AD.adjust,baseManual:AD.base===""?"":Math.max(0,+AD.base),renewMonitor:AD.renewMonitor,reductions:AD.red,tier:AD.tier,ym,tanka:Math.max(0,simNum(AD.tanka,10.96)),taisei:tai,kobetsu:kob})}
-function adBillHTML(b){const pct=x=>(Math.round(x*1000)/10)+"％";const r=(l,v,c)=>`<tr${c?` class="${c}"`:""}><th>${l}</th><td>${v}</td></tr>`;
- return `<div class="tw"><table class="stb adbt"><tbody>${r(ADDEF[AD.svc].soudan?(AD.kind==="plan"||(AD.kind==="renewal"&&!AD.renewMonitor)?"基本報酬（計画作成）":(AD.kind==="none"?"基本報酬（なし）":"基本報酬（モニタリング）")):"基本報酬",b.D.toLocaleString()+" 単位")}${r("体制加算",b.E.toLocaleString()+" 単位")}${r("個別加算",b.F.toLocaleString()+" 単位")}${b.L?r("減算・加算（基本報酬に対して）",(b.L>0?"＋":"▲")+Math.abs(b.L).toLocaleString()+" 単位"):""}${r("小計",b.G.toLocaleString()+" 単位")}${r("処遇改善加算（"+pct(b.rate)+"）",b.H.toLocaleString()+" 単位")}${r("合計",b.I.toLocaleString()+" 単位","tot")}${r("請求額",b.J.toLocaleString()+" 円","yen")}</tbody></table></div>`}
-function adText(){const D=ADDEF[AD.svc],m=adMsgs()||[];const rows=D.defs.map((d,j)=>AD.vals[j]?`・${d.name}　${adUnits(AD.vals[j],d)}単位`:null).filter(Boolean);
- return [`【加算入力チェック】${AD.svc}${D.soudan?"（"+kindLabel()+"）":""}`,`利用者：${AD.ini||"（未入力）"}　サービス提供月：${AD.ym?AD.ym.replace("-","年")+"月":"-"}`,...(rows.length?rows:["（加算なし）"]),`加算の合計 ${D.defs.reduce((s,d,j)=>s+adUnits(AD.vals[j],d),0).toLocaleString()} 単位`,(()=>{const b=adBillCalc();return `基本報酬 ${b.D} ／ 体制加算 ${b.E} ／ 個別加算 ${b.F}${b.L?" ／ 減算・加算 "+b.L:""} ／ 小計 ${b.G} ／ 処遇改善 ${b.H}（${Math.round(b.rate*1000)/10}％）\n合計 ${b.I.toLocaleString()} 単位　請求額 ${b.J.toLocaleString()} 円（単価 ${simNum(AD.tanka,10.96)}）`})(),...(D.soudan?(m.length?["算定ルールの確認："].concat(m.map(x=>"⚠ "+x)):["算定ルール上の問題なし"]):["算定ルールの自動確認の対象外"])].join("\n")}
-
-
 /* ===== 判定の保存と見返し（イニシャル） ===== */
 const CUR={ini:"",ym:""};
 function ymNow(){const d=new Date();return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")}
@@ -1516,28 +1266,6 @@ function renderHist(){const all=histAll();const inis=[...new Set(all.map(x=>x.in
   $("hClr").onclick=()=>{if(!confirm("保存した判定をすべて削除します。元に戻せません。よろしいですか？"))return;try{localStorage.removeItem(HK)}catch(e){}renderHist();toast("すべて削除しました")};
   if($("hCsv"))$("hCsv").onclick=()=>{const q=s=>'"'+String(s??"").replace(/"/g,'""')+'"';const rows=["保存日時,イニシャル,対象月,サービス,支援,判定,加算,理由,根拠,回答の流れ"];list.forEach(x=>rows.push([x.at,x.ini,x.ym,SV[x.svc],x.act,RL[x.r],x.t,x.w,x.ref,(x.path||[]).map(p=>p.q+"→"+(p.a?"はい":"いいえ")).join(" / ")].map(q).join(",")));const a=document.createElement("a");a.href=URL.createObjectURL(new Blob(["\ufeff"+rows.join("\r\n")],{type:"text/csv"}));a.download="加算フロー判定履歴.csv";a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}}}
 
-/* ===== 加算入力チェックの保存（イニシャル） ===== */
-const ASK="kasan-flow-adsave";let AD_OPEN=null;
-function asGet(){try{return JSON.parse(localStorage.getItem(ASK)||"[]")}catch(e){return[]}}
-function asPut(a){try{localStorage.setItem(ASK,JSON.stringify(a.slice(0,300)));return true}catch(e){return false}}
-function asState(){return {svc:AD.svc,kind:AD.kind,renewMonitor:AD.renewMonitor,monthly:AD.monthly,cat:AD.cat,ym:AD.ym,tanka:AD.tanka,red:AD.red.slice(),adjust:AD.adjust,dual:AD.dual,tier:AD.tier,base:AD.base,vals:AD.vals.slice()}}
-function asSummary(){const b=adBillCalc(),m=adMsgs();return {I:b.I,J:b.J,cnt:AD.vals.filter(Boolean).length,warn:m?m.length:null}}
-function asSave(over){const i=normIni(document.getElementById("adIni").value),msg=document.getElementById("adSvMsg");
- if(!iniOk(i)){msg.textContent="イニシャルはローマ字で入力してください（例：Y.T）。氏名は保存できません。";msg.classList.add("err");document.getElementById("adIni").focus();return}
- AD.ini=i;const a=asGet();const now=new Date().toLocaleString("sv-SE",{hour12:false}).slice(0,16);const e={id:over&&AD_OPEN?AD_OPEN:Date.now().toString(36)+Math.random().toString(36).slice(2,6),at:now,ini:i,st:asState(),sum:asSummary()};
- const k=over&&AD_OPEN?a.findIndex(x=>x.id===AD_OPEN):-1;if(k>=0)a[k]=e;else a.unshift(e);
- if(asPut(a)){AD_OPEN=e.id;msg.classList.remove("err");msg.textContent=k>=0?"上書き保存しました。":"保存しました。下の「保存した内容」から開けます。";toast(k>=0?"上書き保存しました":"保存しました");asList()}else{msg.textContent="保存できませんでした（ブラウザの保存領域を確認してください）";msg.classList.add("err")}}
-function asYm(v){return v?v.replace("-","年")+"月":"対象月なし"}
-function asList(){const box=document.getElementById("asBox");if(!box)return;const a=asGet();const q=normIni(AD.q||"");const l=a.filter(x=>!q||(x.ini||"").includes(q));
- document.getElementById("asN").textContent=a.length;
- document.getElementById("adSvOver").hidden=!AD_OPEN||!a.some(x=>x.id===AD_OPEN);
- box.innerHTML=a.length?`<div class="sform" style="margin-top:6px"><div class="w"><label for="asQ">イニシャルで絞り込む</label><input id="asQ" maxlength="10" autocomplete="off" placeholder="例：Y.T" value="${esc(AD.q||"")}"></div></div><div class="hlist">${l.length?l.map(x=>`<div class="asi${x.id===AD_OPEN?" cur":""}"><div class="ht"><b>${esc(x.ini||"イニシャルなし")}　${esc(asYm(x.st.ym))}</b><small>${esc(x.st.svc)}${ADDEF[x.st.svc]&&ADDEF[x.st.svc].soudan?"・"+esc((x.st.kind==="renewal"?"更新の月（"+(x.st.renewMonitor?"モニタリング費":"計画作成費")+"）":(KINDL[x.st.kind]||""))):""}　加算${x.sum.cnt}件　合計 ${Number(x.sum.I).toLocaleString()}単位・${Number(x.sum.J).toLocaleString()}円${x.sum.warn?`　<span class="adw">確認${x.sum.warn}件</span>`:""}</small><small>保存：${esc(x.at)}</small></div><div class="nav"><button class="l sm" data-ao="${x.id}">開く</button><button class="l sm" data-ac="${x.id}">コピー</button><button class="l sm hdel" data-ad="${x.id}">削除</button></div></div>`).join(""):`<p class="hint">条件に合う保存はありません。</p>`}</div>`:`<p class="hint">まだ保存した内容はありません。</p>`;
- const qi=document.getElementById("asQ");if(qi)qi.oninput=e=>{AD.q=e.target.value;const p=e.target.selectionStart;asList();const n=document.getElementById("asQ");n.focus();try{n.setSelectionRange(p,p)}catch(_){}};
- box.querySelectorAll("[data-ao]").forEach(b=>b.onclick=()=>asOpen(b.dataset.ao));
- box.querySelectorAll("[data-ac]").forEach(b=>b.onclick=()=>{const x=a.find(y=>y.id===b.dataset.ac);const keep=asState(),ki=AD.ini;Object.assign(AD,JSON.parse(JSON.stringify(x.st)));AD.ini=x.ini;const t=adText();Object.assign(AD,keep);AD.ini=ki;copy(t)});
- box.querySelectorAll("[data-ad]").forEach(b=>b.onclick=()=>{if(!confirm("この保存を削除しますか？"))return;asPut(a.filter(y=>y.id!==b.dataset.ad));if(AD_OPEN===b.dataset.ad)AD_OPEN=null;asList();toast("削除しました")})}
-function asOpen(id){const x=asGet().find(y=>y.id===id);if(!x||!ADDEF[x.st.svc])return;Object.assign(AD,JSON.parse(JSON.stringify(x.st)));AD.ini=x.ini;if(AD.vals.length!==ADDEF[AD.svc].defs.length)AD.vals=ADDEF[AD.svc].defs.map((d,j)=>AD.vals[j]||false);AD_OPEN=id;renderAd(true);toast("保存した内容を開きました");document.getElementById("adh").scrollIntoView({block:"start"})}
-
 /* ===== 受け入れ可能人数（取扱件数40件基準） ===== */
 const CASE_LIMIT=40;
 function capCalc(I,R,raw){const sub=Math.max(0,Math.floor(simNum(raw.sub,0))),staff=I.staff,eq=staff+0.5*sub;
@@ -1561,260 +1289,6 @@ function capHTML(C){const f1=x=>(Math.round(x*10)/10).toFixed(1);
  c("受託件数に直した上限",C.capCur==null?"-":"約 "+C.capCur,"人",`毎月の請求割合から換算${C.ji?"（障害児 "+C.ji+" 人を除く）":""}`)+`</div>
  ${bind?`<p class="sub" style="margin-top:8px">${bind}</p>`:""}
  <details class="tips"><summary>この判定について</summary><p>取扱件数は、1か月の請求人数（計画作成・モニタリング・更新を行った人数。障害児相談支援を一体で運営している場合はその人数を含む）を、相談支援専門員の人数（相談支援員は0.5人）で割った数です。40件を超えた分は、基本報酬が（継続）サービス利用支援費（Ⅱ）（計画作成費732単位・モニタリング費606単位）になります（業務ガイドラインP.110・P.115）。${C.billIn==null&&C.est!=null?`今月の請求人数は、受託件数とモニタリング回数から計算した1か月の平均（${C.est} 人）を使っています。実際の人数がわかるときは入力してください。`:""}減収の目安は、${esc(C.cat)}のモニタリング費と（Ⅱ）の差（1人あたり ${yen(C.lossPer)} 円）で計算しています。正式な取扱件数は前6か月の平均で判定されます（業務ガイドラインP.115）。ガイドラインには「40以上の部分」と「40件を超えた部分」の両方の書き方があり、このツールは「40件を超えた分」で計算しています。</p></details>`}
-/* ===== 業務量シミュレーション：「計画相談支援スケジュール管理」v18.63 の業務量シミュレーション（buildWorkloadSheet_ と予定計算の関数）を移植。関数は原文のまま、シートの数式はセル単位で再現 ===== */
-const WLC=(function(){const MON_RULE_STD="std";const MON_RULE_M1="m1";const MON_RULE_M2="m2";const MON_RULE_M3="m3";const MON_RULE_M6="m6";const MON_RULE_CERT="cert";const MON_PATTERNS={"横浜市標準（2,3,4,7,10月目）": "std", "毎月（利用開始月から毎月）": "m1", "2か月ごと（利用開始月から数えて）": "m2", "3か月ごと（利用開始月から数えて）": "m3", "6か月ごと（利用開始月から数えて）": "m6", "受給者証どおり（T列に実施月を入力）": "cert"};const MON_DEFAULT_KEY="横浜市標準（2,3,4,7,10月目）";const MON_PATTERN_MIGRATION={"毎月（1〜10月目）": "毎月（利用開始月から毎月）", "2ヶ月ごと（2,4,6,8,10月目）": "2か月ごと（利用開始月から数えて）", "3ヶ月ごと（2,5,8月目）": "3か月ごと（利用開始月から数えて）", "6ヶ月ごと（5月目）": "6か月ごと（利用開始月から数えて）"};const MON_PATTERN_KEYS=["横浜市標準（2,3,4,7,10月目）", "毎月（利用開始月から毎月）", "2か月ごと（利用開始月から数えて）", "3か月ごと（利用開始月から数えて）", "6か月ごと（利用開始月から数えて）", "受給者証どおり（T列に実施月を入力）"];const WL_WEIGHT_PLAN=3;const WL_WEIGHT_RENEWAL=3;const WL_WEIGHT_MONITOR=1;const CASELOAD_LIMIT_II=40;const MASTER_COLS={"SELECT": 1, "NAME": 2, "STAFF": 3, "YM": 4, "CATEGORY": 5, "TANKA": 6, "SVC_KEIKAKU": 7, "SVC_SHOGAIJI": 8, "SVC_JIRITSU": 9, "SVC_ITEN": 10, "SVC_TEICHAKU": 11, "KYOTEN": 12, "RECENT_USE": 13, "RENEWAL": 14, "NOTE": 15, "GENERATED": 16, "UPDATED": 17, "MON_INTERVAL": 18, "SUPPORT_MONTHS": 19, "CERT_MONTHS": 20, "ADJUST": 21};var _targetIdxOverride=null;
-function ymIndex_(y, m) { return y * 12 + (m - 1); }
-function getTargetIdx_() {
-  if (_targetIdxOverride !== null) return _targetIdxOverride;
-  var d = new Date();
-  return ymIndex_(d.getFullYear(), d.getMonth() + 1) - 1;
-}
-function ymFromIndex_(idx) { return { year: Math.floor(idx / 12), month: idx - Math.floor(idx / 12) * 12 + 1 }; }
-function normalizeMonPatternKey_(key) {
-  var k = String(key || "").trim();
-  if (MON_PATTERN_MIGRATION[k]) k = MON_PATTERN_MIGRATION[k];
-  return MON_PATTERNS.hasOwnProperty(k) ? k : MON_DEFAULT_KEY;
-}
-function parseCertMonths_(text) {
-  var set = {}, count = 0;
-  String(text || "").replace(/[０-９]/g, function(c) { return String.fromCharCode(c.charCodeAt(0) - 0xFEE0); })
-    .split(/[^0-9]+/).forEach(function(t) {
-      var n = parseInt(t, 10);
-      if (n >= 1 && n <= 12 && !set[n]) { set[n] = true; count++; }
-    });
-  return count ? set : null;
-}
-function parseYmCell(rawYm) {
-  if (rawYm instanceof Date) {
-    var dy = rawYm.getFullYear(), dm = rawYm.getMonth() + 1;
-    return (dy >= 1900 && dm >= 1 && dm <= 12) ? { year: dy, month: dm } : null;
-  }
-  var m = String(rawYm || "").match(/(\d{4})[年\/\-](\d{1,2})/);
-  if (!m) return null;
-  var y = parseInt(m[1], 10), mo = parseInt(m[2], 10);
-  if (y < 1900 || mo < 1 || mo > 12) return null;
-  return { year: y, month: mo };
-}
-function getSoudanCycle_(user) {
-  var cIdx = ymIndex_(user.year, user.month);
-  var S = parseInt(user.supportMonths, 10) || 12;
-  if (S < 1) S = 1;
-  var anchor = null, hasActual = false;
-  var actual = parseYmCell(String(user && user.renewal || "").trim());
-  if (actual) {
-    var aIdx = ymIndex_(actual.year, actual.month);
-    if (aIdx > cIdx) { anchor = aIdx; hasActual = true; }
-    // 計画作成月以前のN列は採用しない（運用点検で要確認）
-  }
-  if (anchor === null) anchor = cIdx + S;
-  var firstRenewal = anchor - Math.floor((anchor - cIdx - 1) / S) * S;
-  // v18.38：管理範囲を「基準月（前月）」を含む1年に自動で進める。
-  // 範囲の区切りは更新月（N列の周期）に合わせ、初回は計画作成月〜最初の区切り（通常13か月）、以降12か月。
-  // 基準月＝当月の前月なので、更新月の翌々月に新しい1年へ切り替わる（更新月の請求が終わるまで旧範囲を保持）。
-  var firstEnd = anchor - 12 * Math.floor((anchor - cIdx - 1) / 12);
-  var T = getTargetIdx_();
-  var startIdx, len;
-  if (T <= firstEnd) {
-    startIdx = cIdx; len = firstEnd - cIdx + 1;
-  } else {
-    var endIdx = firstEnd + 12 * Math.ceil((T - firstEnd) / 12);
-    startIdx = endIdx - 11; len = 12;
-  }
-  var isNew = startIdx === cIdx;
-  return {
-    cIdx: cIdx, S: S, anchor: anchor, firstRenewal: firstRenewal, hasActualRenewal: hasActual,
-    isNew: isNew,
-    startIdx: startIdx,
-    len: len,
-    rule: MON_PATTERNS[normalizeMonPatternKey_(user.monInterval)],
-    cert: parseCertMonths_(user.certMonths)
-  };
-}
-function classifySoudanMonth_(cy, idx) {
-  if (idx === cy.cIdx) return "plan";
-  if (idx < cy.cIdx) return "none";
-  var d = idx - cy.anchor;
-  if ((((d % cy.S) + cy.S) % cy.S) === 0) return "renewal";
-  var firstTerm = idx < cy.firstRenewal;
-  var prev = firstTerm ? cy.cIdx : cy.anchor + Math.floor((idx - cy.anchor) / cy.S) * cy.S;
-  var t = idx - prev; // サービス利用開始月（更新後は新期間の初月）を1とする月数
-  var rule = cy.rule;
-  if (rule === MON_RULE_CERT) {
-    if (!cy.cert) rule = MON_RULE_STD; // 未入力時は標準で代替（③・運用点検で要確認表示）
-    else return cy.cert[ymFromIndex_(idx).month] ? "monitoring" : "none";
-  }
-  var hit;
-  if (rule === MON_RULE_M1) hit = true;
-  else if (rule === MON_RULE_M2) hit = t % 2 === 0;
-  else if (rule === MON_RULE_M3) hit = t % 3 === 0;
-  else if (rule === MON_RULE_M6) hit = t % 6 === 0;
-  else hit = (firstTerm && t <= 3) || t % 3 === 0; // 横浜市標準
-  return hit ? "monitoring" : "none";
-}
-function billedCountAtIdx_(users, idx) {
-  var n = 0;
-  for (var i = 0; i < users.length; i++) {
-    if (classifySoudanMonth_(getSoudanCycle_(users[i]), idx) !== "none") n++;
-  }
-  return n;
-}
-function userWorkByCalendarMonth_(user, fromIdx) {
-  var work = {};
-  for (var m=1;m<=12;m++) work[m] = { plan:0, monitor:0, renewal:0, weight:0 };
-  var cy = getSoudanCycle_(user);
-  var start = (fromIdx === undefined || fromIdx === null) ? getTargetIdx_() + 1 : fromIdx;
-  for (var i=0; i<12; i++) {
-    var idx = start + i;
-    var billing = classifySoudanMonth_(cy, idx);
-    if (billing === "none") continue;
-    var cm = ymFromIndex_(idx).month;
-    if (billing === "plan") { work[cm].plan++; work[cm].weight += WL_WEIGHT_PLAN; }
-    else if (billing === "renewal") { work[cm].renewal++; work[cm].weight += WL_WEIGHT_RENEWAL; }
-    else if (billing === "monitoring") { work[cm].monitor++; work[cm].weight += WL_WEIGHT_MONITOR; }
-  }
-  return work;
-}
-function aggregateWorkload_(users) {
-  var total = {};
-  for (var m=1;m<=12;m++) total[m] = { plan:0, monitor:0, renewal:0, weight:0 };
-  for (var i=0;i<users.length;i++) {
-    var w = userWorkByCalendarMonth_(users[i]);
-    for (var m2=1;m2<=12;m2++) {
-      total[m2].plan    += w[m2].plan;
-      total[m2].monitor += w[m2].monitor;
-      total[m2].renewal += w[m2].renewal;
-      total[m2].weight  += w[m2].weight;
-    }
-  }
-  return total;
-}
-function recommendContractMonths_(users) {
-  var base = aggregateWorkload_(users);
-  var results = [];
-  // v18.44：各月の「次に来るその月」（今月以降）に契約した場合で試算し、新規利用者の1年目（12か月）だけを数える
-  var curYm = ymFromIndex_(getTargetIdx_() + 1);
-  for (var sm=1; sm<=12; sm++) {
-    var newYear = sm >= curYm.month ? curYm.year : curYm.year + 1;
-    var newUser = {
-      year: newYear,
-      month: sm,
-      monInterval: MON_PATTERN_KEYS && MON_PATTERN_KEYS.length ? MON_PATTERN_KEYS[0] : "",
-      supportMonths: 12
-    };
-    var nw = userWorkByCalendarMonth_(newUser, ymIndex_(newYear, sm));
-    var maxPlanCount = 0, maxWeight = 0, sumSq = 0;
-    for (var m=1;m<=12;m++) {
-      var planCnt = base[m].plan + base[m].renewal + nw[m].plan + nw[m].renewal;
-      var weight  = base[m].weight + nw[m].weight;
-      if (planCnt > maxPlanCount) maxPlanCount = planCnt;
-      if (weight > maxWeight) maxWeight = weight;
-      sumSq += weight * weight;
-    }
-    results.push({ startMonth: sm, maxPlanCount: maxPlanCount, maxWeight: maxWeight, sumSq: sumSq });
-  }
-  results.sort(function(a,b){
-    if (a.maxPlanCount !== b.maxPlanCount) return a.maxPlanCount - b.maxPlanCount;
-    if (a.maxWeight !== b.maxWeight) return a.maxWeight - b.maxWeight;
-    return a.sumSq - b.sumSq;
-  });
-  return results;
-}
-function ymLabel(year, month) { return year + "年" + month + "月"; }
-function R(x,d){d=d||0;const f=Math.pow(10,d);return Math.sign(x)*Math.round(+(Math.abs(x)*f).toPrecision(15))/f}
-function RD(x){return Math.sign(x)*Math.floor(+Math.abs(x).toPrecision(15))}
-function T1(v){return R(v,1).toFixed(1)}
-function compute(users,P,tIdx){_targetIdxOverride=(tIdx==null?null:tIdx);
- const agg=aggregateWorkload_(users);const ws=getTargetIdx_()+1;const order=[];for(let q=0;q<12;q++)order.push(ymFromIndex_(ws+q));
- let maxW=0,maxP=0;for(let m=1;m<=12;m++){const a=agg[m];if(a.weight>maxW)maxW=a.weight;if(a.plan+a.renewal>maxP)maxP=a.plan+a.renewal}
- const staff=P.staff;const rows=order.map((o,qi)=>{const a=agg[o.month],pt=a.plan+a.renewal;const bl=maxW>0?Math.round(a.weight/maxW*20):0;
-  const idx=ws+qi;const billed=billedCountAtIdx_(users,idx);let s6=0;for(let pm=1;pm<=6;pm++)s6+=billedCountAtIdx_(users,idx-pm);
-  const p6=Math.round(s6/6*1000)/1000;const cs=(+staff||0)<=0?"":R(p6/staff,1);
-  return {label:ymLabel(o.year,o.month)+(qi===0?"（今月）":""),plan:a.plan,renewal:a.renewal,monitor:a.monitor,pt,weight:a.weight,bar:"■".repeat(bl),ratio:maxW>0?a.weight/maxW:0,billed,caseload:cs,peakPlan:pt>0&&pt===maxP&&maxP>=2,free:pt===0&&a.weight===0}});
- const sum=k=>rows.reduce((s,r)=>s+r[k],0);const tot={plan:sum("plan"),renewal:sum("renewal"),monitor:sum("monitor"),pt:sum("pt"),weight:sum("weight"),billed:sum("billed")};
- const cl=rows.map(r=>r.caseload).filter(x=>typeof x==="number");const over=cl.filter(x=>x>=CASELOAD_LIMIT_II).length,mx=cl.length?Math.max(...cl):0;
- const alert=over>0?"⚠ 取扱件数が40件以上になる月が "+over+" か月あります（最大 "+T1(mx)+" 件）。40件目以降（契約日が新しい順）は基本報酬が（Ⅱ）（計画作成費732単位・モニタリング費606単位）になります（業務ガイドラインP.115）。新規受け入れの時期・人員体制を見直してください。":"✓ 今後12か月の取扱件数は、1人あたり最大 "+T1(mx)+" 件で、40件未満の見込みです（前6か月平均÷相談支援専門員の人数：業務ガイドラインP.115）。";
- const recos=recommendContractMonths_(users);const byM={};recos.forEach((r,k)=>byM[r.startMonth]={...r,rank:k+1,label:k<3?"おすすめ":(k<8?"ふつう":"避けたほうがよい"),stars:"★".repeat(k<3?3:(k<8?2:1))});
- const days=P.dow==="週3日"?(3*52-16*3/5)/12:(P.dow==="週4日"?(4*52-16*4/5)/12:(5*52-16*5/5)/12);
- const mwd=R(days,1),avail=R(days*P.hpd*staff,0);
- const tPlan=P.ass+P.plan+P.mtg+P.conf+2*P.travel,tRen=P.renew+2*P.travel,tMon=P.mon+1*P.travel;const oth=P.hospN*P.hospH+P.tourN*P.tourH;
- const annual=tot.plan*tPlan+tot.renewal*tRen+tot.monitor*tMon;
- const needAvg=R(annual/12,0)+oth;const needPeak=R(Math.max(...rows.map(r=>r.plan*tPlan+r.renewal*tRen+r.monitor*tMon)),0)+oth;
- const jr=n=>({need:n,avail,rest:avail-n,rate:avail===0?"":R(n/avail*100,0)+"%",judge:avail===0?"":(n<=avail?"おさまっています":"時間が足りません")});
- const capBy=py=>py<=0?"":RD((avail-oth)/(py/12));const nUsers=users.length;const perY=annual/nUsers;
- const cap={cur:capBy(perY),curText:isFinite(perY)?"件（1人あたり年 "+T1(perY)+" 時間）":"件",first:capBy(tPlan+5*tMon),cont:capBy(tRen+3*tMon),m1:capBy(tRen+11*tMon)};
- const room=cap.cur===""?"":cap.cur-nUsers;const roomText=room===""?"":(room>0?"あと "+room+" 件まで受け入れられます":(room===0?"ちょうど上限です":"上限を "+Math.abs(room)+" 件超えています"));
- return {rows,tot,alert,over,best:recos[0],byM,mwd,avail,tPlan,tRen,tMon,oth,avg:jr(needAvg),peak:jr(needPeak),cap,now:nUsers,room,roomText,travelNote:P.travel===0?"⚠ 未入力：移動時間0で計算中です。事業所の実態を入れてください":"計画作成・更新 +"+T1(P.travel*2)+"時間／モニタリング +"+T1(P.travel)+"時間"}}
-return {compute,parseYmCell,PATTERNS:MON_PATTERN_KEYS,DEFAULT:MON_DEFAULT_KEY,COLS:MASTER_COLS,CERT:MON_PATTERNS[MON_PATTERN_KEYS[5]]}})();
-/* ===== 業務量シミュレーションの画面 ===== */
-const WLV=document.getElementById("wlv");let wlReady=false;const WLK="kasan-flow-wl";
-const WLD={dow:"週5日",hpd:8,staff:1,ass:2.1,plan:2.6,mtg:1,conf:0.8,travel:0,mon:4,renew:6.5,hospN:1,hospH:3,tourN:1,tourH:3};
-let WLS={users:[],P:{...WLD}};
-function wlLoad(){try{const s=JSON.parse(localStorage.getItem(WLK)||"null");if(s&&Array.isArray(s.users)){WLS.users=s.users;WLS.P={...WLD,...(s.P||{})}}}catch(e){}}
-function wlSave(){try{localStorage.setItem(WLK,JSON.stringify(WLS))}catch(e){}}
-function wlYm(v){return /^\d{4}-\d{2}$/.test(v||"")?v.replace("-","年").replace(/年0?/,"年")+"月":""}
-function wlUsers(){return WLS.users.map((u,i)=>{const p=WLC.parseYmCell(wlYm(u.ym));if(!p)return null;return {name:u.ini||("No."+(i+1)),year:p.year,month:p.month,renewal:wlYm(u.ren),monInterval:u.pat||WLC.DEFAULT,supportMonths:parseInt(u.sm,10)||12,certMonths:u.cert||""}}).filter(Boolean)}
-function wlNum(v,d){return Math.max(0,simNum(v,d))}
-function wlParams(){const P=WLS.P;return {dow:P.dow,hpd:wlNum(P.hpd,8),staff:wlNum(P.staff,1),ass:wlNum(P.ass,2.1),plan:wlNum(P.plan,2.6),mtg:wlNum(P.mtg,1),conf:wlNum(P.conf,0.8),travel:wlNum(P.travel,0),mon:wlNum(P.mon,4),renew:wlNum(P.renew,6.5),hospN:wlNum(P.hospN,1),hospH:wlNum(P.hospH,3),tourN:wlNum(P.tourN,1),tourH:wlNum(P.tourH,3)}}
-function wlRowHTML(u,i){const cert=u.pat===WLC.PATTERNS[5];return `<div class="wlu" data-i="${i}"><div class="wlr1"><input class="wi" maxlength="10" aria-label="イニシャル" placeholder="イニシャル" value="${esc(u.ini||"")}"><input class="wy" type="month" aria-label="契約年月（計画作成の月）" value="${esc(u.ym||"")}"><button type="button" class="l sm wdel" aria-label="この利用者を削除">削除</button></div>
- <div class="wlr2"><select class="wp" aria-label="モニタリング間隔">${WLC.PATTERNS.map(p=>`<option${p===(u.pat||WLC.DEFAULT)?" selected":""}>${esc(p)}</option>`).join("")}</select></div>
- <details class="wlx"><summary>更新年月・支給決定期間${u.ren||String(u.sm||12)!=="12"||cert?"（設定あり）":""}</summary><div class="sform"><div><label>更新年月（任意）</label><input class="wr" type="month" value="${esc(u.ren||"")}"></div><div><label>支給決定期間（月）</label><input class="ws" type="number" min="1" inputmode="numeric" value="${esc(u.sm||12)}"></div>${cert?`<div class="w"><label>受給者証のモニタリング月（例：5,6,7,10,1）</label><input class="wc" value="${esc(u.cert||"")}"></div>`:""}</div></details></div>`}
-function renderWl(){wlLoad();const P=WLS.P;
- const nf=(id,lab,step,note)=>`<div><label for="${id}">${lab}</label><input id="${id}" data-k="${id.slice(2)}" type="number" min="0" step="${step}" inputmode="decimal" value="${esc(P[id.slice(2)])}">${note?`<span class="fnote">${note}</span>`:""}</div>`;
- WLV.innerHTML=`<div class="card"><h2 id="wlh">業務量シミュレーション</h2><p class="sub">契約中の利用者の予定から、今月から12か月の仕事量、勤務時間で受けられる件数、新規契約におすすめの月を計算します。計算は「計画相談支援スケジュール管理」v18.63と同じです。データはこの端末だけに保存します。</p>
- <h3 class="sh3">利用者の予定（<span id="wlN">0</span>名）</h3><div id="wlList"></div>
- <div class="tools"><button class="l" id="wlAdd">利用者を追加</button><label class="l" for="wlCsv" style="cursor:pointer">利用者マスタのCSVを読み込む</label><input type="file" id="wlCsv" accept=".csv,text/csv" hidden><button class="l hdel" id="wlClr">すべて削除</button></div>
- <details class="tips"><summary>入力とCSVについて</summary><p>契約年月は計画作成の月です。計画相談支援・障害児相談支援の利用者を入れてください。CSVは、スプレッドシートの「利用者マスタ」シートを［ファイル］→［ダウンロード］→［カンマ区切り形式（.csv）］で書き出したものを使います。氏名は読み込まず、番号に置き換えます（必要ならイニシャルに書き換えてください）。計画相談支援か障害児相談支援にチェックがある行だけを読み込みます。</p></details></div>
- <div class="card" style="margin-top:12px"><h3 class="sh3" style="margin-top:0">勤務の条件</h3><div class="sform"><div><label for="wlDow">1週間の勤務日数</label><select id="wlDow">${["週5日","週4日","週3日"].map(d=>`<option${d===P.dow?" selected":""}>${d}</option>`).join("")}</select></div>${nf("wlhpd","1日の勤務時間","0.5")}${nf("wlstaff","相談支援専門員の人数","1","働ける時間は人数分を合計")}</div>
- <details class="grpd"><summary>1件あたりの時間と付随業務<span class="cnt" id="wlTN">初期値</span></summary><p class="hint">初期値は国の実態調査（平成29年6月時点）の平均（移動を含まない）です。事業所の実測値があれば置き換えてください。</p>
-  <div class="sform">${nf("wlass","インテーク〜契約・アセスメント（時間）","0.1")}${nf("wlplan","計画案の作成・再アセスメント・その他","0.1")}${nf("wlmtg","サービス担当者会議","0.1")}${nf("wlconf","計画の作成（確定・交付）","0.1")}${nf("wlmon","モニタリング1回","0.1")}${nf("wlrenew","更新月1回（モニタリング＋次の計画）","0.1")}<div class="w">${nf("wltravel","訪問1回の往復移動時間","0.25")}<span class="fnote" id="wlTrN"></span></div>${nf("wlhospN","通院同行（件／月）","1")}${nf("wlhospH","通院同行1回（時間）","0.5")}${nf("wltourN","施設見学（件／月）","1")}${nf("wltourH","施設見学1回（時間）","0.5")}</div>
-  <div class="tools"><button type="button" class="l sm" id="wlReset">時間を初期値に戻す</button></div></details></div>
- <div class="card" style="margin-top:12px" id="wlRes" aria-live="polite"></div>`;
- const $=id=>document.getElementById(id);
- const list=$("wlList");const drawList=()=>{list.innerHTML=WLS.users.length?WLS.users.map(wlRowHTML).join(""):`<p class="hint" style="margin:0">まだ利用者がいません。「利用者を追加」か、CSVの読み込みで入れてください。</p>`;$("wlN").textContent=WLS.users.length};
- list.oninput=list.onchange=e=>{const row=e.target.closest(".wlu");if(!row)return;const u=WLS.users[+row.dataset.i];const t=e.target;
-  if(t.classList.contains("wi")){const v=normIni(t.value);u.ini=iniOk(v)?v:u.ini;if(!iniOk(v)&&e.type==="change"){toast("イニシャルはローマ字で入力してください");t.value=u.ini||""}}
-  else if(t.classList.contains("wy"))u.ym=t.value;else if(t.classList.contains("wr"))u.ren=t.value;else if(t.classList.contains("ws"))u.sm=t.value;else if(t.classList.contains("wc"))u.cert=t.value;
-  else if(t.classList.contains("wp")){u.pat=t.value;if(e.type==="change"){drawList()}}
-  wlSave();wlDraw()};
- list.onclick=e=>{const b=e.target.closest(".wdel");if(!b)return;const i=+b.closest(".wlu").dataset.i;WLS.users.splice(i,1);wlSave();drawList();wlDraw()};
- $("wlAdd").onclick=()=>{WLS.users.push({ini:"",ym:"",ren:"",pat:WLC.DEFAULT,sm:12,cert:""});wlSave();drawList();wlDraw();const r=list.querySelectorAll(".wlu");r[r.length-1].querySelector(".wi").focus()};
- $("wlClr").onclick=()=>{if(!WLS.users.length)return;if(!confirm("登録した利用者をすべて削除します。よろしいですか？"))return;WLS.users=[];wlSave();drawList();wlDraw()};
- $("wlCsv").onchange=e=>{const f=e.target.files[0];if(!f)return;const rd=new FileReader();rd.onload=()=>{const rows=wlCsvParse(String(rd.result).replace(/^\ufeff/,""));const C=WLC.COLS,got=[];
-   rows.forEach(r=>{const nm=String(r[C.NAME-1]||"").trim();if(!nm)return;const p=WLC.parseYmCell(String(r[C.YM-1]||""));if(!p)return;const k=String(r[C.SVC_KEIKAKU-1]||"").toUpperCase()==="TRUE",j=String(r[C.SVC_SHOGAIJI-1]||"").toUpperCase()==="TRUE";if(!k&&!j)return;
-    const rn=WLC.parseYmCell(String(r[C.RENEWAL-1]||""));got.push({ini:"",ym:p.year+"-"+String(p.month).padStart(2,"0"),ren:rn?rn.year+"-"+String(rn.month).padStart(2,"0"):"",pat:String(r[C.MON_INTERVAL-1]||"").trim()||WLC.DEFAULT,sm:parseInt(r[C.SUPPORT_MONTHS-1],10)||12,cert:String(r[C.CERT_MONTHS-1]||"")})});
-   e.target.value="";if(!got.length){toast("読み込める利用者が見つかりませんでした（利用者マスタのCSVか確認してください）");return}
-   if(WLS.users.length&&!confirm(`${got.length}名を読み込みます。いま登録している${WLS.users.length}名と置き換えますか？\n（キャンセルすると、今の一覧の後ろに追加します）`))WLS.users=WLS.users.concat(got);else WLS.users=got;
-   wlSave();drawList();wlDraw();toast(got.length+"名を読み込みました（氏名は読み込んでいません）")};rd.readAsText(f,"utf-8")};
- $("wlDow").onchange=e=>{WLS.P.dow=e.target.value;wlSave();wlDraw()};
- WLV.querySelectorAll("input[data-k]").forEach(el=>el.oninput=()=>{WLS.P[el.dataset.k]=el.value;wlSave();wlDraw()});
- $("wlReset").onclick=()=>{["ass","plan","mtg","conf","travel","mon","renew","hospN","hospH","tourN","tourH"].forEach(k=>{WLS.P[k]=WLD[k];$("wl"+k).value=WLD[k]});wlSave();wlDraw();toast("時間を初期値に戻しました")};
- drawList();wlDraw();wlReady=true}
-function wlCsvParse(t){const out=[];let row=[],f="",q=false;for(let i=0;i<t.length;i++){const c=t[i];if(q){if(c==='"'){if(t[i+1]==='"'){f+='"';i++}else q=false}else f+=c}else if(c==='"')q=true;else if(c===","){row.push(f);f=""}else if(c==="\n"||c==="\r"){if(c==="\r"&&t[i+1]==="\n")i++;row.push(f);out.push(row);row=[];f=""}else f+=c}if(f!==""||row.length){row.push(f);out.push(row)}return out}
-function wlDraw(){const box=document.getElementById("wlRes");const P=wlParams();const tk=["ass","plan","mtg","conf","travel","mon","renew","hospN","hospH","tourN","tourH"];
- document.getElementById("wlTN").textContent=tk.some(k=>P[k]!==WLD[k])?"変更あり":"初期値";
- const users=wlUsers();const skipped=WLS.users.length-users.length;
- if(!users.length){box.innerHTML=`<p class="sjudge none">契約年月を入れた利用者を1人以上登録すると、結果を表示します</p>`;document.getElementById("wlTrN").textContent="";return}
- const W=WLC.compute(users,P,null);document.getElementById("wlTrN").textContent=W.travelNote;
- const okA=W.avg.judge==="おさまっています",okP=W.peak.judge==="おさまっています";
- const jc=okA&&okP?"ok":(okA?"warn":"ng");const head=okA&&okP?"いまの担当件数は、一番忙しい月でも勤務時間内におさまります":(okA?"年間の平均ではおさまりますが、一番忙しい月は時間が足りません":"年間の平均でも時間が足りません");
- const c=(l,v,u,s,cls)=>`<div class="scell${cls?" "+cls:""}"><span class="l">${l}</span><span class="v">${v}<small>${u}</small></span><span class="s">${s}</span></div>`;
- const mxc=Math.max(0,...W.rows.map(r=>typeof r.caseload==="number"?r.caseload:0));
- const tb=(h,rows)=>`<div class="tw"><table class="stb wlt"><thead><tr>${h.map(x=>`<th>${x}</th>`).join("")}</tr></thead><tbody>${rows}</tbody></table></div>`;
- box.innerHTML=`<p class="sjudge ${jc}">${esc(head)}</p><div class="sgrid">`+
-  c("受け入れ上限（いまの構成）",W.cap.cur===""?"-":W.cap.cur,"件",esc(W.roomText||"")+`（いま ${W.now} 件）`,W.room===""?"":(W.room<0?"neg":"pos"))+
-  c("使用率",W.avg.rate||"-","",`一番忙しい月 ${W.peak.rate||"-"}（必要 ${W.peak.need} ／ 働ける ${W.avail} 時間）`,okP?"pos":"neg")+
-  c("取扱件数の最大",(Math.round(mxc*10)/10).toFixed(1),"件",W.over?`40件以上の月が ${W.over} か月`:"12か月とも40件未満",W.over?"neg":"pos")+
-  c("新規契約におすすめの月",W.best.startMonth,"月",`計画作成が最も多い月でも ${W.best.maxPlanCount} 件`)+`</div>
- ${skipped?`<p class="fnote err">契約年月が入っていない ${skipped} 名は計算に含めていません。</p>`:""}
- <p class="wlal ${W.over?"ng":"ok"}">${esc(W.alert)}</p>
- <h3 class="sh3">今月から12か月の月別の仕事量</h3>${tb(["月","計画作成","更新","モニタリング","計画作成＋更新","仕事量","混み具合","請求人数","取扱件数"],W.rows.map(r=>`<tr class="${r.peakPlan?"pk":(r.free?"fr":"")}"><th>${esc(r.label)}</th><td>${r.plan}</td><td>${r.renewal}</td><td>${r.monitor}</td><td><b>${r.pt}</b></td><td>${r.weight}</td><td class="bar"><span style="width:${Math.round(r.ratio*100)}%"></span></td><td>${r.billed}</td><td class="${typeof r.caseload==="number"&&r.caseload>=40?"ov":""}">${r.caseload===""?"-":r.caseload.toFixed(1)}</td></tr>`).join("")+`<tr class="tot"><th>合計</th><td>${W.tot.plan}</td><td>${W.tot.renewal}</td><td>${W.tot.monitor}</td><td><b>${W.tot.pt}</b></td><td>${W.tot.weight}</td><td></td><td>${W.tot.billed}</td><td>（延べ）</td></tr>`)}
- <p class="fnote">仕事量は、計画作成と更新を3、モニタリングを1として数えた合計です。赤い行は計画作成が集中する月、緑の行は予定のない月です。取扱件数は、前6か月の請求人数の平均÷相談支援専門員の人数です（業務ガイドラインP.115）。</p>
- <details class="tips"><summary>判定の内訳と受け入れ上限</summary>${tb(["","1か月に必要な時間","働ける時間","余り","使用率","判定"],[["年間の平均",W.avg],["一番忙しい月",W.peak]].map(([l,j])=>`<tr><th>${l}</th><td>${j.need}</td><td>${j.avail}</td><td>${j.rest}</td><td>${j.rate}</td><td>${j.judge}</td></tr>`).join(""))}
-  ${tb(["この勤務日数で受け入れられる件数","件"],[["受け入れ上限（いまの利用者構成で計算）",`${W.cap.cur===""?"-":W.cap.cur} ${esc(W.cap.curText.replace(/^件/,""))}`],["参考：全員が初年度（計画作成＋モニタリング5回）",W.cap.first],["参考：全員が2年目以降（更新月＋モニタリング3回）",W.cap.cont],["参考：毎月モニタリング（2年目以降：更新月＋モニタリング11回）",W.cap.m1],["いまの担当件数",W.now],["あと何件受けられるか",`${W.room===""?"-":W.room}　${esc(W.roomText)}`]].map(([a,b])=>`<tr><th>${a}</th><td>${b}</td></tr>`).join(""))}
-  <p>月あたりの勤務日数 ${W.mwd} 日、働ける時間 ${W.avail} 時間（人数分の合計）。計画作成の月 ${(Math.round(W.tPlan*10)/10)} 時間・更新月 ${(Math.round(W.tRen*10)/10)} 時間・モニタリング ${(Math.round(W.tMon*10)/10)} 時間（移動を含む）、付随業務 月 ${W.oth} 時間で計算しています。上限件数は法令で決まった数ではなく、1件あたりの時間から計算した目安です。</p></details>
- <details class="tips"><summary>新規契約におすすめの月</summary><p>おすすめは <b>${W.best.startMonth}月</b> です。この月に契約すると、計画作成が最も多い月でも ${W.best.maxPlanCount} 件におさまります。</p>${tb(["契約月","計画作成のピーク","仕事量のピーク","評価","おすすめ度"],Array.from({length:12},(_,i)=>{const b=W.byM[i+1];return `<tr class="${b.rank<=3?"fr":(b.rank>8?"pk":"")}"><th>${i+1}月</th><td>${b.maxPlanCount}</td><td>${b.maxWeight}</td><td>${b.label}</td><td>${b.stars}</td></tr>`}).join(""))}<p>計画作成のピークは、その月に新規契約を入れた場合に、1年のうちで計画作成＋更新が最も多くなる月の件数です。新規の利用者は横浜市標準のモニタリング（2,3,4,7,10月目）で試算しています。</p></details>
- <details class="tips"><summary>この計算について</summary><p>契約年月・更新年月・モニタリング間隔・支給決定期間から、今月から12か月分の予定を計算しています。実際の契約月は利用者・関係機関の都合が優先です。結果は業務量の目安としてお使いください。</p></details>`}
-
 /* ===== 業務ガイドライン（検索と目次） ===== */
 const GLV=document.getElementById("glv");let glReady=false;const GLSRC=new Set(["gl"]);let GLQ="",GLshown=8,GLres=[];
 const GLTOP=[["提出物と期限（計画案・確定計画・報告書）","3-8"],["区役所への提出資料一覧","4-7"],["契約内容の報告","3-5"],["各種届出（変更届など）","6-6"],["体制届（加算の届出）","5-27"],["モニタリング報告書の作成と提出","3-16"],["更新月のモニタリング","3-18"],["受給者証の内容確認","3-9"],["代理受領通知","3-13"],["給付費の請求のタイミング","5-31"],["事業所変更の対応","5-30"],["記録の整備","5-17"]];
@@ -1884,8 +1358,8 @@ function glOpen(k,terms,scroll){const sb=document.getElementById("glSecBox");con
 
 /* ===== 移動できるメニュー ===== */
 const FAB=document.getElementById("fab"),FM=document.getElementById("fmenu"),FPK="kasan-flow-fab";
-function curPanel(){return !SIMV.hidden?"s":(!ADV.hidden?"a":(!HV.hidden?"h":(!WLV.hidden?"g":(!GLV.hidden?"b":(!WV.hidden?"w":"k")))))}
-function showPanel(p){if(p==="b"){setTab(false);document.getElementById("mainK").hidden=true;GLV.hidden=false;document.getElementById("tabK").setAttribute("aria-selected","false");document.getElementById("tabW").setAttribute("aria-selected","false");document.getElementById("lead").textContent="業務ガイドライン";document.getElementById("svcTag").classList.add("hide");if(!glReady)renderGl();const h=document.getElementById("glh");h.setAttribute("tabindex","-1");h.focus({preventScroll:true});window.scrollTo({top:0});return}if(p==="g"){setTab(false);document.getElementById("mainK").hidden=true;WLV.hidden=false;document.getElementById("tabK").setAttribute("aria-selected","false");document.getElementById("tabW").setAttribute("aria-selected","false");document.getElementById("lead").textContent="業務量シミュレーション";document.getElementById("svcTag").classList.add("hide");if(!wlReady)renderWl();const h=document.getElementById("wlh");h.setAttribute("tabindex","-1");h.focus({preventScroll:true});window.scrollTo({top:0});return}if(p==="h"){setTab(false);document.getElementById("mainK").hidden=true;HV.hidden=false;document.getElementById("tabK").setAttribute("aria-selected","false");document.getElementById("tabW").setAttribute("aria-selected","false");document.getElementById("lead").textContent="保存した判定";document.getElementById("svcTag").classList.add("hide");renderHist();const h=document.getElementById("histh");h.setAttribute("tabindex","-1");h.focus({preventScroll:true});window.scrollTo({top:0});return}if(p==="a"){setTab(false);document.getElementById("mainK").hidden=true;ADV.hidden=false;document.getElementById("tabK").setAttribute("aria-selected","false");document.getElementById("tabW").setAttribute("aria-selected","false");document.getElementById("lead").textContent="加算入力チェック";document.getElementById("svcTag").classList.add("hide");if(!adReady)renderAd();const h=document.getElementById("adh");h.setAttribute("tabindex","-1");h.focus({preventScroll:true});window.scrollTo({top:0});return}if(p==="s"){setTab(false);document.getElementById("mainK").hidden=true;SIMV.hidden=false;document.getElementById("tabK").setAttribute("aria-selected","false");document.getElementById("tabW").setAttribute("aria-selected","false");document.getElementById("lead").textContent="損益シミュレーション";document.getElementById("svcTag").classList.add("hide");if(!simReady)renderSim();const h=document.getElementById("simh");h.setAttribute("tabindex","-1");h.focus({preventScroll:true});window.scrollTo({top:0})}else setTab(p==="w")}
+function curPanel(){return !SIMV.hidden?"s":(!HV.hidden?"h":(!GLV.hidden?"b":(!WV.hidden?"w":"k")))}
+function showPanel(p){if(p==="b"){setTab(false);document.getElementById("mainK").hidden=true;GLV.hidden=false;document.getElementById("tabK").setAttribute("aria-selected","false");document.getElementById("tabW").setAttribute("aria-selected","false");document.getElementById("lead").textContent="業務ガイドライン";document.getElementById("svcTag").classList.add("hide");if(!glReady)renderGl();const h=document.getElementById("glh");h.setAttribute("tabindex","-1");h.focus({preventScroll:true});window.scrollTo({top:0});return}if(p==="h"){setTab(false);document.getElementById("mainK").hidden=true;HV.hidden=false;document.getElementById("tabK").setAttribute("aria-selected","false");document.getElementById("tabW").setAttribute("aria-selected","false");document.getElementById("lead").textContent="保存した判定";document.getElementById("svcTag").classList.add("hide");renderHist();const h=document.getElementById("histh");h.setAttribute("tabindex","-1");h.focus({preventScroll:true});window.scrollTo({top:0});return}if(p==="s"){setTab(false);document.getElementById("mainK").hidden=true;SIMV.hidden=false;document.getElementById("tabK").setAttribute("aria-selected","false");document.getElementById("tabW").setAttribute("aria-selected","false");document.getElementById("lead").textContent="損益シミュレーション";document.getElementById("svcTag").classList.add("hide");if(!simReady)renderSim();const h=document.getElementById("simh");h.setAttribute("tabindex","-1");h.focus({preventScroll:true});window.scrollTo({top:0})}else setTab(p==="w")}
 function placeFab(x,y){const w=FAB.offsetWidth,h=FAB.offsetHeight,vw=document.documentElement.clientWidth,vh=window.innerHeight;x=Math.min(Math.max(8,x),vw-w-8);y=Math.min(Math.max(8,y),vh-h-8);FAB.style.left=x+"px";FAB.style.top=y+"px";FAB.style.right="auto";FAB.style.bottom="auto";return{x,y}}
 function loadFab(){try{const p=JSON.parse(localStorage.getItem(FPK)||"null");if(p&&isFinite(p.rx)&&isFinite(p.ry)){placeFab(p.rx*document.documentElement.clientWidth,p.ry*window.innerHeight)}}catch(e){}}
 function saveFab(){try{const r=FAB.getBoundingClientRect();localStorage.setItem(FPK,JSON.stringify({rx:r.left/document.documentElement.clientWidth,ry:r.top/window.innerHeight}))}catch(e){}}
